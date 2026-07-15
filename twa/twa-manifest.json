@@ -2,7 +2,7 @@
   "//": "Bubblewrap config for wrapping the PWA as an Android Trusted Web Activity.",
   "//1": "Replace HOST placeholders with your Firebase Hosting domain, then run `bubblewrap build` from this folder.",
   "packageId": "app.designcloset.twa",
-  "host": "REPLACE_WITH_YOUR_DOMAIN",
+  "host": "design-closet.web.app",
   "name": "Design Closet",
   "launcherName": "Design Closet",
   "display": "standalone",
@@ -16,9 +16,9 @@
   "backgroundColor": "#fdf9f5",
   "enableNotifications": true,
   "startUrl": "/?source=twa",
-  "iconUrl": "https://REPLACE_WITH_YOUR_DOMAIN/icons/icon-512.png",
-  "maskableIconUrl": "https://REPLACE_WITH_YOUR_DOMAIN/icons/maskable-512.png",
-  "monochromeIconUrl": "https://REPLACE_WITH_YOUR_DOMAIN/icons/icon-512.png",
+  "iconUrl": "https://design-closet.web.app/icons/icon-512.png",
+  "maskableIconUrl": "https://design-closet.web.app/icons/maskable-512.png",
+  "monochromeIconUrl": "https://design-closet.web.app/icons/icon-512.png",
   "splashScreenFadeOutDuration": 300,
   "appVersionName": "1.0.0",
   "appVersionCode": 1,
@@ -27,25 +27,25 @@
       "name": "Today's Outfit",
       "shortName": "Today",
       "url": "/?source=twa&tab=home",
-      "chosenIconUrl": "https://REPLACE_WITH_YOUR_DOMAIN/icons/icon-192.png"
+      "chosenIconUrl": "https://design-closet.web.app/icons/icon-192.png"
     },
     {
       "name": "Add a Piece",
       "shortName": "Add",
       "url": "/?source=twa&action=add",
-      "chosenIconUrl": "https://REPLACE_WITH_YOUR_DOMAIN/icons/icon-192.png"
+      "chosenIconUrl": "https://design-closet.web.app/icons/icon-192.png"
     }
   ],
   "signingKey": {
     "path": "./android.keystore",
     "alias": "designcloset"
   },
-  "webManifestUrl": "https://REPLACE_WITH_YOUR_DOMAIN/manifest.webmanifest",
+  "webManifestUrl": "https://design-closet.web.app/manifest.webmanifest",
   "fallbackType": "customtabs",
   "features": {},
   "minSdkVersion": 21,
   "isChromeOSOnly": false,
   "isMetaQuest": false,
-  "fullScopeUrl": "https://REPLACE_WITH_YOUR_DOMAIN/",
+  "fullScopeUrl": "https://design-closet.web.app/",
   "appVersion": "1.0.0"
 }

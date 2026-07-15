@@ -140,11 +140,15 @@ The PWA is wrapped as a **Trusted Web Activity**. Full step-by-step guide:
 
 ## What's placeholder (fill these in)
 
-| File | Placeholder | Replace with |
-| ---- | ----------- | ------------ |
-| `.firebaserc` | `REPLACE_WITH_YOUR_FIREBASE_PROJECT_ID` | Your Firebase project id |
-| `public/.well-known/assetlinks.json` | `REPLACE_WITH_YOUR_APP_SIGNING_SHA256_FINGERPRINT` | Play App Signing SHA-256 |
-| `twa/twa-manifest.json` | `REPLACE_WITH_YOUR_DOMAIN` | Your Firebase Hosting domain |
+| File | Value | Status |
+| ---- | ----- | ------ |
+| `.firebaserc` | Firebase project id → `design-closet` | ✅ set |
+| `twa/twa-manifest.json` | Hosting domain → `design-closet.web.app` | ✅ set |
+| `public/.well-known/assetlinks.json` | Play App Signing SHA-256 | ⏳ fill during Play packaging (see `twa/README.md`) |
+
+Deployed origin: **https://design-closet.web.app** (also `design-closet.firebaseapp.com`).
+Remember to add this origin to **Supabase → Auth → URL Configuration** so sign-in
+redirects (Google OAuth, magic links, password reset) work in production.
 
 ## Roadmap
 
