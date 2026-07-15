@@ -9,7 +9,7 @@ import { DEFAULT_LAT, DEFAULT_LON } from './config.js'
 import { render, go } from './render.js'
 import { renderNav } from './views.js'
 import { generateOutfit } from './engine.js'
-import { renderAuth, authSubmit, authToggle, authGoogle, authReset } from './auth.js'
+import { renderAuth, authSubmit, authToggle, authGoogle, authReset, authResendFor } from './auth.js'
 import * as modals from './modals.js'
 
 /* ---------------- Theme ---------------- */
@@ -232,6 +232,7 @@ Object.assign(window, {
   authToggle,
   authGoogle,
   authReset,
+  authResendFor,
   // modals + actions
   ...modals,
 })

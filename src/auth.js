@@ -1,11 +1,34 @@
 // Authentication screen: email/password sign-in & sign-up, Google OAuth,
 // and password reset. Rendered into #view before the main app boots.
 import { $, esc, toast } from './ui.js'
-import { signIn, signUp, signInWithGoogle, resetPassword } from './supabase.js'
+import {
+  signIn,
+  signUp,
+  signInWithGoogle,
+  resetPassword,
+  resendConfirmation,
+  getAuthProviders,
+} from './supabase.js'
 
 let mode = 'signin' // 'signin' | 'signup'
+// Provider availability, discovered from the project settings. Assume email-only
+// until we learn otherwise so we never render a dead OAuth button.
+let providers = { email: true, google: false, confirmEmail: false }
+let providersLoaded = false
+
+// Load enabled providers once, then re-render if the auth screen is still up.
+async function ensureProviders() {
+  if (providersLoaded) return
+  const prev = providers.google
+  providers = await getAuthProviders()
+  providersLoaded = true
+  // Only re-render if the result changes what's on screen (the OAuth button),
+  // so we never wipe fields the user is already typing into.
+  if (providers.google !== prev && $('.auth-wrap')) renderAuth()
+}
 
 export function renderAuth() {
+  ensureProviders()
   // Hide chrome that only belongs to the authed app.
   document.querySelector('#nav')?.style.setProperty('display', 'none')
   document.querySelector('#fab')?.style.setProperty('display', 'none')
@@ -48,10 +71,14 @@ export function renderAuth() {
           : ''
       }
 
-      <div class="auth-divider">or</div>
-      <button class="btn btn-ghost btn-block" onclick="authGoogle()">
-        <span class="ms" style="font-size:18px;margin-right:8px">login</span>Continue with Google
-      </button>
+      ${
+        providers.google
+          ? `<div class="auth-divider">or</div>
+             <button class="btn btn-ghost btn-block" onclick="authGoogle()">
+               <span class="ms" style="font-size:18px;margin-right:8px">login</span>Continue with Google
+             </button>`
+          : ''
+      }
     </div>
 
     <div class="auth-switch">
@@ -63,9 +90,13 @@ export function renderAuth() {
     </div>
   </div>`
 
-  // Submit on Enter from the password field.
+  // Submit on Enter from the password field. NOTE: must not return a falsy value
+  // from onkeydown — that cancels the keystroke and blocks typing entirely.
   const pass = $('#a-pass')
-  if (pass) pass.onkeydown = (e) => e.key === 'Enter' && authSubmit()
+  if (pass)
+    pass.onkeydown = (e) => {
+      if (e.key === 'Enter') authSubmit()
+    }
 }
 
 function setErr(msg) {
@@ -97,10 +128,8 @@ export async function authSubmit() {
       const { data, error } = await signUp(email, pass, name)
       if (error) throw error
       if (!data.session) {
-        // Email confirmation is on — no session returned yet.
-        busy(false)
-        setErr('')
-        toast('Check your email to confirm your account.')
+        // Email confirmation is on — no session yet. Show a clear next step.
+        showCheckEmail(email)
         return
       }
     } else {
@@ -112,6 +141,29 @@ export async function authSubmit() {
     busy(false)
     setErr(humanize(e?.message))
   }
+}
+
+// Shown only when the project requires email confirmation before first sign-in.
+function showCheckEmail(email) {
+  document.querySelector('#view').innerHTML = `
+  <div class="auth-wrap">
+    <img class="auth-logo" src="/favicon.svg" alt="Design Closet">
+    <div class="auth-brand">Almost there</div>
+    <div class="auth-tag">One tap and your closet is ready.</div>
+    <div class="auth-card" style="text-align:center">
+      <span class="ms" style="font-size:44px;color:var(--primary)">mark_email_read</span>
+      <h2 style="margin-top:8px">Confirm your email</h2>
+      <p class="sub">We sent a confirmation link to<br><strong>${esc(email)}</strong>.
+      Tap it, then come back and sign in.</p>
+      <button class="btn btn-p btn-block" style="margin-top:22px" onclick="authToggle()">Back to sign in</button>
+      <button class="link" style="margin-top:14px" onclick="authResendFor('${esc(email)}')">Resend confirmation</button>
+    </div>
+  </div>`
+}
+
+export async function authResendFor(email) {
+  const { error } = await resendConfirmation(email)
+  toast(error ? 'Could not resend — try again shortly.' : 'Confirmation email resent.')
 }
 
 export async function authGoogle() {

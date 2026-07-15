@@ -60,6 +60,26 @@ export async function uploadPhoto(id, blob) {
 }
 
 /* ---------------- Auth helpers ---------------- */
+// Reads the project's enabled auth providers so the sign-in screen can adapt
+// (e.g. only show "Continue with Google" when Google is actually configured).
+let _authSettings = null
+export async function getAuthProviders() {
+  if (_authSettings) return _authSettings
+  try {
+    const r = await fetch(`${SB_URL}/auth/v1/settings`, { headers: { apikey: SB_ANON } })
+    const j = await r.json()
+    _authSettings = {
+      email: !!j?.external?.email,
+      google: !!j?.external?.google,
+      // A confirmation email is required when autoconfirm is off.
+      confirmEmail: j?.mailer_autoconfirm === false,
+    }
+  } catch {
+    _authSettings = { email: true, google: false, confirmEmail: false }
+  }
+  return _authSettings
+}
+
 export async function getSession() {
   const { data } = await supabase.auth.getSession()
   return data.session
@@ -79,6 +99,9 @@ export function signInWithGoogle() {
     provider: 'google',
     options: { redirectTo: window.location.origin },
   })
+}
+export function resendConfirmation(email) {
+  return supabase.auth.resend({ type: 'signup', email })
 }
 export function resetPassword(email) {
   return supabase.auth.resetPasswordForEmail(email, {
