@@ -1,51 +1,70 @@
 {
-  "//": "Bubblewrap config for wrapping the PWA as an Android Trusted Web Activity.",
-  "//1": "Replace HOST placeholders with your Firebase Hosting domain, then run `bubblewrap build` from this folder.",
   "packageId": "app.designcloset.twa",
   "host": "design-closet.web.app",
   "name": "Design Closet",
-  "launcherName": "Design Closet",
+  "launcherName": "Closet",
   "display": "standalone",
-  "orientation": "portrait",
-  "themeColor": "#4e635a",
-  "themeColorDark": "#161412",
-  "navigationColor": "#4e635a",
-  "navigationColorDark": "#161412",
-  "navigationDividerColor": "#e5dfd7",
-  "navigationDividerColorDark": "#332e28",
-  "backgroundColor": "#fdf9f5",
+  "themeColor": "#4E635A",
+  "themeColorDark": "#000000",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#FDF9F5",
   "enableNotifications": true,
-  "startUrl": "/?source=twa",
+  "startUrl": "https://design-closet.web.app/",
   "iconUrl": "https://design-closet.web.app/icons/icon-512.png",
   "maskableIconUrl": "https://design-closet.web.app/icons/maskable-512.png",
-  "monochromeIconUrl": "https://design-closet.web.app/icons/icon-512.png",
   "splashScreenFadeOutDuration": 300,
-  "appVersionName": "1.0.0",
+  "signingKey": {
+    "path": "/Users/joelguzman/Vibe-Code/design-closet/twa/android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1",
   "appVersionCode": 1,
   "shortcuts": [
     {
       "name": "Today's Outfit",
       "shortName": "Today",
-      "url": "/?source=twa&tab=home",
+      "url": "https://design-closet.web.app/?source=pwa&tab=home",
       "chosenIconUrl": "https://design-closet.web.app/icons/icon-192.png"
     },
     {
       "name": "Add a Piece",
       "shortName": "Add",
-      "url": "/?source=twa&action=add",
+      "url": "https://design-closet.web.app/?source=pwa&action=add",
       "chosenIconUrl": "https://design-closet.web.app/icons/icon-192.png"
     }
   ],
-  "signingKey": {
-    "path": "./android.keystore",
-    "alias": "designcloset"
-  },
+  "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://design-closet.web.app/manifest.webmanifest",
   "fallbackType": "customtabs",
-  "features": {},
-  "minSdkVersion": 21,
+  "features": {
+    "playBilling": {
+      "enabled": true
+    },
+    "locationDelegation": {
+      "enabled": true
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
   "isChromeOSOnly": false,
   "isMetaQuest": false,
   "fullScopeUrl": "https://design-closet.web.app/",
-  "appVersion": "1.0.0"
+  "minSdkVersion": 21,
+  "orientation": "portrait",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "protocolHandlers": [],
+  "fileHandlers": [],
+  "launchHandlerClientMode": "",
+  "displayOverride": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "appVersion": "1"
 }
