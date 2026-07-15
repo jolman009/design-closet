@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.designcloset.web.app",
       "sha256_cert_fingerprints": [
-        "79:36:6E:06:95:F4:BA:95:FF:EF:60:3C:D4:6B:E5:93:A0:05:46:3D:AB:25:0C:34:10:06:C8:72:6D:B0:D4:5E"
+        "79:36:6E:06:95:F4:BA:95:FF:EF:60:3C:D4:6B:E5:93:A0:05:46:3D:AB:25:0C:34:10:06:C8:72:6D:B0:D4:5E",
+        "B8:49:1C:7B:40:C1:DF:2C:79:EB:6F:D7:FF:6D:3E:F0:CB:F4:E9:D4:48:03:B2:FD:81:DD:41:2B:69:E5:4E:8C"
       ]
     }
   }
