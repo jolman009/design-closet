@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Your Account — Design Closet</title>
+<meta name="robots" content="index, follow">
+<style>
+  :root{ --bg:#fdf9f5; --surface:#fff; --text:#1c1b1a; --text-2:#6b6f6a; --primary:#4e635a; --border:#e5dfd7; --danger:#ba1a1a }
+  *{box-sizing:border-box}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:'Inter',system-ui,-apple-system,sans-serif; line-height:1.65; font-size:16px }
+  .wrap{ max-width:680px; margin:0 auto; padding:40px 22px 80px }
+  header{ text-align:center; margin-bottom:32px }
+  .logo{ width:64px; height:64px }
+  h1{ font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:31px; margin:14px 0 4px; letter-spacing:-.01em }
+  .updated{ color:var(--text-2); font-size:13.5px }
+  h2{ font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:20px; margin:30px 0 8px }
+  p, li{ color:#2b2a28 }
+  a{ color:var(--primary); text-decoration:none } a:hover{ text-decoration:underline }
+  ul{ padding-left:20px } li{ margin:5px 0 }
+  .card{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin-top:14px }
+  .steps{ counter-reset:s; list-style:none; padding:0 }
+  .steps li{ counter-increment:s; position:relative; padding:6px 0 6px 40px; margin:0 }
+  .steps li::before{ content:counter(s); position:absolute; left:0; top:6px; width:26px; height:26px; border-radius:50%;
+    background:var(--primary); color:#fff; font:600 13px 'Inter'; display:flex; align-items:center; justify-content:center }
+  .btn{ display:inline-flex; align-items:center; gap:8px; background:var(--danger); color:#fff; text-decoration:none;
+    font:600 13px 'Inter'; letter-spacing:.06em; text-transform:uppercase; padding:15px 26px; border-radius:8px; margin-top:8px }
+  .btn:hover{ opacity:.92; text-decoration:none }
+  .muted{ color:var(--text-2); font-size:13.5px }
+  code{ background:#f1ede7; padding:2px 6px; border-radius:4px; font-size:14px }
+  footer{ margin-top:44px; padding-top:20px; border-top:1px solid var(--border); text-align:center; color:var(--text-2); font-size:13.5px }
+  footer a{ margin:0 8px }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img class="logo" src="/favicon.svg" alt="Design Closet">
+    <h1>Delete Your Account &amp; Data</h1>
+    <div class="updated">Design Closet · Last updated 15 July 2026</div>
+  </header>
+
+  <p>You can request permanent deletion of your Design Closet account and all associated data at any
+  time. This page explains what is deleted and how to request it — no app install required.</p>
+
+  <h2>What gets deleted</h2>
+  <div class="card">
+    <ul>
+      <li>Your account and sign-in credentials</li>
+      <li>All wardrobe items and their photos</li>
+      <li>Your saved outfits, events, and wear history</li>
+      <li>Your style profile (name, palette, sizes, goals, preferences)</li>
+    </ul>
+    <p class="muted" style="margin:10px 0 0">Deletion is permanent and cannot be undone. Calendar data
+    is never stored by us, so there is nothing to delete there.</p>
+  </div>
+
+  <h2>How to request deletion</h2>
+  <div class="card">
+    <ol class="steps">
+      <li>Tap the button below (or email us at <a href="mailto:jolman009@gmail.com">jolman009@gmail.com</a>).</li>
+      <li>Send the request <strong>from the email address associated with your account</strong>, so we can verify it’s you.</li>
+      <li>We will permanently delete your account and data within <strong>30 days</strong> and confirm by email.</li>
+    </ol>
+    <a class="btn" href="mailto:jolman009@gmail.com?subject=Design%20Closet%20account%20deletion%20request&body=Please%20permanently%20delete%20my%20Design%20Closet%20account%20and%20all%20associated%20data.%0A%0AAccount%20email%3A%20%5Byour%20account%20email%5D%0A%0AI%20understand%20this%20is%20permanent%20and%20cannot%20be%20undone.">
+      Request account deletion
+    </a>
+    <p class="muted" style="margin:14px 0 0">If the button doesn’t open your mail app, email
+    <code>jolman009@gmail.com</code> with the subject “Account deletion request” and include your
+    account email.</p>
+  </div>
+
+  <h2>Data retention</h2>
+  <p>Once processed, your personal data is removed from our active systems. Residual copies in
+  encrypted backups are purged on our normal backup rotation (within 30 days). We may retain minimal
+  records only where required by law.</p>
+
+  <footer>
+    <a href="/">Open App</a> · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a>
+    <div class="muted" style="margin-top:8px">© 2026 Design Closet</div>
+  </footer>
+</div>
+</body>
+</html>
