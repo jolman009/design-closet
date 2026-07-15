@@ -1,5 +1,5 @@
 {
-  "packageId": "app.designcloset.twa",
+  "packageId": "com.designcloset.web.app",
   "host": "design-closet.web.app",
   "name": "Design Closet",
   "launcherName": "Closet",

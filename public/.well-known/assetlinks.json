@@ -3,7 +3,7 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "app.designcloset.twa",
+      "package_name": "com.designcloset.web.app",
       "sha256_cert_fingerprints": [
         "79:36:6E:06:95:F4:BA:95:FF:EF:60:3C:D4:6B:E5:93:A0:05:46:3D:AB:25:0C:34:10:06:C8:72:6D:B0:D4:5E"
       ]
