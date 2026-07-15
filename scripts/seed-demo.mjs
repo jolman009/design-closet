@@ -106,14 +106,11 @@ export async function seed() {
     ]),
   })
 
-  // Profile. NOTE: closet_profile.id is a legacy integer column without a working
-  // auto-increment default (see supabase/migrations/003), so we supply an explicit
-  // id here. Production is fixed by migration 003.
+  // Profile (id auto-increments once migration 003 is applied).
   await fetch(`${SB}/rest/v1/closet_profile`, {
     method: 'POST',
     headers: h(token),
     body: JSON.stringify({
-      id: 900000 + Math.floor(Math.random() * 99999),
       name: 'Ava',
       location: 'Los Angeles',
       persona:
