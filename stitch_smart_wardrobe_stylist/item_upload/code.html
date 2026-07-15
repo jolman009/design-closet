@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELÉVATION - Add Item</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#ebe7e4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#49473f",
+                        "background": "#fdf9f5",
+                        "primary-fixed": "#d1e8dd",
+                        "inverse-surface": "#31302e",
+                        "primary": "#4e635a",
+                        "inverse-on-surface": "#f4f0ec",
+                        "inverse-primary": "#b5ccc1",
+                        "surface-tint": "#4e635a",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#cac6bc",
+                        "secondary": "#615e56",
+                        "surface-variant": "#e6e2de",
+                        "outline": "#727875",
+                        "surface-container": "#f1edea",
+                        "on-primary-fixed-variant": "#374b43",
+                        "primary-container": "#8da399",
+                        "on-primary-fixed": "#0b1f18",
+                        "on-surface": "#1c1b1a",
+                        "on-secondary-container": "#65635a",
+                        "primary-fixed-dim": "#b5ccc1",
+                        "tertiary-container": "#9f9e9a",
+                        "surface": "#fdf9f5",
+                        "on-secondary-fixed": "#1d1c15",
+                        "on-tertiary-container": "#353632",
+                        "on-primary-container": "#263932",
+                        "tertiary-fixed": "#e4e2dd",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "tertiary": "#5e5e5b",
+                        "on-background": "#1c1b1a",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#e7e2d8",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#424845",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#ddd9d6",
+                        "surface-container-highest": "#e6e2de",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f7f3ef",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "secondary-container": "#e4dfd5",
+                        "outline-variant": "#c2c8c4",
+                        "surface-bright": "#fdf9f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "margin-desktop": "64px",
+                        "gutter": "16px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                        "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-sm": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .upload-dashed {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23727875' stroke-width='1' stroke-dasharray='8%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-bottom-color: #4e635a !important;
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #4e635a;
+            background-color: #4e635a;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #d1e8dd;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background flex justify-between items-center px-margin-mobile h-16">
+<button class="flex items-center justify-center p-2 hover:bg-primary/5 transition-colors duration-300 rounded-full">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="text-headline-md font-headline-md tracking-widest text-primary uppercase">ELÉVATION</h1>
+<button class="flex items-center justify-center p-2 hover:bg-primary/5 transition-colors duration-300 rounded-full">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-margin-mobile max-w-2xl mx-auto">
+<div class="mb-lg">
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface mb-xs">New Treasure</h2>
+<p class="text-body-md text-secondary font-body-md">Capture the essence of your style.</p>
+</div>
+<!-- Upload Area -->
+<section class="mb-lg">
+<div class="upload-dashed w-full aspect-square md:aspect-video rounded-xl bg-surface-container-low flex flex-col items-center justify-center cursor-pointer group transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden">
+<div class="flex flex-col items-center transition-transform duration-200 group-hover:scale-105">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" style="font-variation-settings: 'wght' 300;">add_a_photo</span>
+<span class="text-label-md font-label-md text-primary">TAP TO CAPTURE</span>
+<span class="text-label-sm font-label-sm text-secondary-fixed-dim mt-1">OR DRAG IMAGE HERE</span>
+</div>
+<!-- Hidden input for functionality -->
+<input accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+</section>
+<!-- Form Fields -->
+<section class="space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Category Field -->
+<div class="flex flex-col">
+<label class="text-label-sm font-label-sm text-secondary mb-2 uppercase tracking-widest">Category</label>
+<select class="appearance-none bg-transparent border-t-0 border-l-0 border-r-0 border-b border-outline-variant py-3 text-body-md font-body-md focus:ring-0">
+<option disabled="" selected="" value="">Select category</option>
+<option>Outerwear</option>
+<option>Tops</option>
+<option>Bottoms</option>
+<option>Dresses</option>
+<option>Accessories</option>
+<option>Footwear</option>
+</select>
+</div>
+<!-- Color Field -->
+<div class="flex flex-col">
+<label class="text-label-sm font-label-sm text-secondary mb-2 uppercase tracking-widest">Color Palette</label>
+<input class="bg-transparent border-t-0 border-l-0 border-r-0 border-b border-outline-variant py-3 text-body-md font-body-md focus:ring-0" placeholder="e.g. Sage, Ecru, Charcoal" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Season Field -->
+<div class="flex flex-col">
+<label class="text-label-sm font-label-sm text-secondary mb-2 uppercase tracking-widest">Season</label>
+<select class="appearance-none bg-transparent border-t-0 border-l-0 border-r-0 border-b border-outline-variant py-3 text-body-md font-body-md focus:ring-0">
+<option disabled="" selected="" value="">Select season</option>
+<option>All Seasons</option>
+<option>Spring / Summer</option>
+<option>Autumn / Winter</option>
+</select>
+</div>
+<!-- Material Field (Extra for minimalist utility) -->
+<div class="flex flex-col">
+<label class="text-label-sm font-label-sm text-secondary mb-2 uppercase tracking-widest">Fabric</label>
+<input class="bg-transparent border-t-0 border-l-0 border-r-0 border-b border-outline-variant py-3 text-body-md font-body-md focus:ring-0" placeholder="e.g. Linen, Silk, Wool" type="text"/>
+</div>
+</div>
+<!-- AI Toggle -->
+<div class="flex items-center justify-between py-4 border-b border-outline-variant">
+<div class="flex flex-col">
+<span class="text-body-md font-body-md text-on-surface">Automatic Tagging</span>
+<span class="text-label-sm font-label-sm text-secondary">Let AI identify fabric and style nuances</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-outline-variant appearance-none cursor-pointer focus:ring-0" id="toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-container-high cursor-pointer" for="toggle"></label>
+</div>
+</div>
+</section>
+<!-- Action Button -->
+<footer class="mt-xl flex flex-col items-center">
+<button class="w-full bg-primary text-on-primary py-4 px-8 rounded-lg text-label-md font-label-md tracking-widest uppercase shadow-sm hover:bg-on-primary-fixed-variant transition-all duration-300 transform active:scale-[0.98]">
+                Save to Closet
+            </button>
+<p class="mt-4 text-label-sm font-label-sm text-secondary-fixed-dim italic">A place for everything, and everything in its place.</p>
+</footer>
+</main>
+<!-- BottomNavBar (Hidden on desktop as per responsive pivot) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container-lowest shadow-sm rounded-t-full">
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant/10 transition-all px-4 py-1 rounded-full" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">checkroom</span>
+<span class="text-label-sm font-label-sm">Closet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant/10 transition-all px-4 py-1 rounded-full" href="#">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span class="text-label-sm font-label-sm">Outfits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant/10 transition-all px-4 py-1 rounded-full" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for the upload area
+        const uploadArea = document.querySelector('.upload-dashed');
+        const fileInput = uploadArea.querySelector('input');
+
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                const fileName = e.target.files[0].name;
+                const label = uploadArea.querySelector('.text-label-md');
+                const subLabel = uploadArea.querySelector('.text-label-sm');
+                label.innerText = "READY TO UPLOAD";
+                subLabel.innerText = fileName;
+                uploadArea.classList.add('bg-primary-fixed/30');
+                uploadArea.classList.remove('bg-surface-container-low');
+            }
+        });
+
+        // Hover effect for the main button
+        const mainBtn = document.querySelector('button.bg-primary');
+        mainBtn.addEventListener('mouseenter', () => {
+            mainBtn.style.transform = 'translateY(-2px)';
+        });
+        mainBtn.addEventListener('mouseleave', () => {
+            mainBtn.style.transform = 'translateY(0)';
+        });
+    </script>
+</body></html>

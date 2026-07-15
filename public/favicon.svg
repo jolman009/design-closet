@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Design Closet">
+  <!-- Wardrobe monogram: a serif-weighted "W" with a clothes hanger woven through the center. -->
+  <!-- Colors follow the Minimalist Boutique tokens: sage primary on cream. -->
+  <g fill="none" stroke="#8da399" stroke-linecap="round" stroke-linejoin="round">
+    <!-- The W: two joined V-strokes -->
+    <path d="M118 148 L196 372 L256 252 L316 372 L394 148" stroke-width="34"/>
+  </g>
+  <!-- Hanger, drawn in cream to read as negative space carved out of the W's center -->
+  <g fill="none" stroke="#fdf9f5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- hook -->
+    <path d="M256 196 C256 172 238 166 238 150 C238 138 248 130 258 132" stroke-width="11"/>
+    <!-- triangular shoulders -->
+    <path d="M256 198 L196 250 L316 250 Z" stroke-width="12" fill="none"/>
+    <!-- bottom bar -->
+    <path d="M196 250 L316 250" stroke-width="12"/>
+  </g>
+</svg>

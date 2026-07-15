@@ -1,0 +1,241 @@
+/* ---------- Design tokens: Minimalist Boutique (feminine) / Noir Bronze (masculine) ---------- */
+:root, [data-theme="feminine"]{
+  --bg:#fdf9f5; --surface:#ffffff; --surface-2:#f4efe9; --surface-3:#eae4dd;
+  --text:#1c1b1a; --text-2:#6b6f6a; --border:#e5dfd7; --border-2:#d5cfc6;
+  --primary:#4e635a; --on-primary:#ffffff; --primary-soft:rgba(78,99,90,.10);
+  --accent:#8da399; --gold:#b08d57;
+  --hero-a:#9db2a5; --hero-b:#59705f; --hero-c:#324439;
+  --shadow:0 4px 20px rgba(78,99,90,.10);
+  --chip:rgba(97,94,86,.08); --danger:#ba1a1a;
+}
+[data-theme="masculine"]{
+  --bg:#161412; --surface:#211e1b; --surface-2:#2a2622; --surface-3:#353028;
+  --text:#f4f1ee; --text-2:#a89f93; --border:#332e28; --border-2:#453e35;
+  --primary:#a98868; --on-primary:#1c1410; --primary-soft:rgba(169,136,104,.14);
+  --accent:#967D69; --gold:#c9a55f;
+  --hero-a:#6d4f1e; --hero-b:#b8860b; --hero-c:#2c2410;
+  --shadow:0 6px 24px rgba(0,0,0,.45);
+  --chip:rgba(244,241,238,.07); --danger:#ffb4ab;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+html,body{margin:0; padding:0}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:'Inter',system-ui,sans-serif; font-size:16px; line-height:1.6;
+  transition:background .45s ease, color .45s ease;
+}
+.serif{font-family:'Playfair Display',serif}
+.ms{font-family:'Material Symbols Outlined'; font-weight:300; font-size:22px; line-height:1;
+    display:inline-block; vertical-align:middle; user-select:none;
+    font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}
+.ms.fill{font-variation-settings:'FILL' 1,'wght' 300}
+.app{max-width:460px; margin:0 auto; min-height:100dvh; padding-bottom:96px; position:relative}
+
+/* ---------- Header ---------- */
+header{display:flex; align-items:center; justify-content:space-between; padding:18px 20px 8px}
+.logo{font-family:'Playfair Display',serif; font-weight:500; font-size:22px; letter-spacing:.32em; color:var(--text); text-indent:.32em; text-align:center; flex:1}
+.logo b{color:var(--primary); font-weight:600}
+.icon-btn{background:none; border:none; color:var(--text); cursor:pointer; padding:8px; border-radius:8px; position:relative}
+.icon-btn:hover{background:var(--primary-soft)}
+
+/* ---------- Theme toggle ---------- */
+.mode-wrap{padding:8px 20px 4px}
+.mode{display:flex; background:var(--surface-2); border-radius:9999px; padding:4px; border:1px solid var(--border)}
+.mode button{flex:1; border:none; background:transparent; color:var(--text-2); font:600 11px 'Inter'; letter-spacing:.14em; padding:9px 0; border-radius:9999px; cursor:pointer; transition:all .3s}
+.mode button.on{background:var(--primary); color:var(--on-primary); box-shadow:var(--shadow)}
+
+/* ---------- Layout bits ---------- */
+main{padding:12px 20px 20px}
+.kicker{font:600 11px 'Inter'; letter-spacing:.16em; text-transform:uppercase; color:var(--text-2)}
+h1.title{font-family:'Playfair Display',serif; font-weight:600; font-size:34px; line-height:1.15; margin:4px 0 2px; letter-spacing:-.01em}
+h2.sec{font-family:'Playfair Display',serif; font-weight:500; font-size:21px; margin:0}
+.row{display:flex; align-items:center; justify-content:space-between; gap:12px}
+.sub{color:var(--text-2); font-size:14.5px; margin:2px 0 0}
+.link{color:var(--primary); font:600 12px 'Inter'; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; background:none; border:none; cursor:pointer; padding:4px 0}
+[data-theme="masculine"] .link{color:var(--gold)}
+section{margin-top:34px}
+
+/* ---------- Hero card ---------- */
+.hero{border-radius:14px; overflow:hidden; position:relative; box-shadow:var(--shadow); background:linear-gradient(160deg,var(--hero-a) 0%,var(--hero-b) 55%,var(--hero-c) 100%); min-height:330px; display:flex; flex-direction:column; justify-content:flex-end; cursor:pointer}
+.hero .shine{position:absolute; inset:0; background:radial-gradient(120% 90% at 80% 0%, rgba(255,255,255,.28), transparent 55%); mix-blend-mode:soft-light; animation:drift 9s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translateX(-4%) } to{transform:translateX(4%)}}
+.hero-body{position:relative; padding:22px; background:linear-gradient(transparent, rgba(10,12,10,.55) 60%)}
+.badge{display:inline-block; background:rgba(20,24,20,.55); backdrop-filter:blur(6px); color:#f2ede4; font:600 10.5px 'Inter'; letter-spacing:.14em; padding:6px 12px; border-radius:4px; text-transform:uppercase}
+.hero h3{font-family:'Playfair Display',serif; color:#fbf8f2; font-size:30px; font-weight:600; margin:12px 0 8px; line-height:1.15}
+.hero .tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px}
+.hero .tag{background:rgba(20,24,20,.45); color:#eae4d8; font:500 11.5px 'Inter'; padding:5px 11px; border-radius:4px; letter-spacing:.04em; backdrop-filter:blur(4px)}
+.hero .note-row{display:flex; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid rgba(255,255,255,.18); padding-top:14px}
+.hero .note{color:#e7e1d4; font-style:italic; font-size:14px; line-height:1.5; font-family:'Playfair Display',serif}
+.hero .wear{color:#fff; font:600 11px 'Inter'; letter-spacing:.14em; white-space:nowrap; display:flex; align-items:center; gap:6px}
+.weather{display:flex; flex-direction:column; align-items:flex-end; line-height:1.2}
+.weather .t{font-family:'Playfair Display',serif; font-size:22px}
+.weather .d{font:600 10px 'Inter'; letter-spacing:.12em; color:var(--text-2); text-transform:uppercase}
+
+/* ---------- Cards / lists ---------- */
+.card{background:var(--surface); border-radius:12px; box-shadow:var(--shadow); border:1px solid var(--border)}
+[data-theme="feminine"] .card{border:none}
+.event{display:flex; align-items:center; gap:14px; padding:16px; margin-top:12px}
+.event .eicon{width:44px; height:44px; border-radius:10px; background:var(--primary-soft); color:var(--primary); display:flex; align-items:center; justify-content:center; flex-shrink:0}
+[data-theme="masculine"] .event .eicon{color:var(--gold)}
+.event .et{font:600 15px 'Inter'; line-height:1.3}
+.event .ed{font:500 11.5px 'Inter'; letter-spacing:.08em; color:var(--text-2); text-transform:uppercase; margin-top:3px}
+.btn{border:none; cursor:pointer; border-radius:6px; font:600 11px 'Inter'; letter-spacing:.12em; text-transform:uppercase; padding:12px 16px; transition:transform .15s ease, opacity .2s}
+.btn:active{transform:scale(.97)}
+.btn-p{background:var(--primary); color:var(--on-primary)}
+.btn-ghost{background:transparent; color:var(--text); border:1px solid var(--border-2)}
+.btn-block{width:100%; padding:16px; border-radius:8px; font-size:12px}
+.btn[disabled]{opacity:.5; pointer-events:none}
+
+/* ---------- Closet grid ---------- */
+.chips{display:flex; gap:8px; overflow-x:auto; padding:14px 0 4px; scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0; border:1px solid var(--border); background:var(--surface); color:var(--text); font:500 13px 'Inter'; padding:8px 18px; border-radius:9999px; cursor:pointer}
+.chip.on{background:var(--primary); color:var(--on-primary); border-color:var(--primary)}
+.grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px}
+.item-card{background:var(--surface); border-radius:10px; overflow:hidden; box-shadow:var(--shadow); border:1px solid var(--border); cursor:pointer; animation:fade .35s ease both}
+[data-theme="feminine"] .item-card{border:none}
+@keyframes fade{from{opacity:0; transform:translateY(8px)} to{opacity:1}}
+.thumb{aspect-ratio:4/4.4; background:var(--surface-2); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden}
+.thumb img{width:100%; height:100%; object-fit:cover; display:block}
+.thumb .ms{font-size:42px; color:var(--text-2); opacity:.55}
+.swatchbar{position:absolute; bottom:0; left:0; right:0; height:5px; display:flex}
+.item-meta{padding:12px 14px 14px; position:relative}
+.item-meta .nm{font:600 14.5px 'Inter'; line-height:1.3}
+.item-meta .br{font:600 10.5px 'Inter'; letter-spacing:.12em; text-transform:uppercase; color:var(--text-2); margin-top:3px}
+.fav{position:absolute; right:10px; top:10px; background:none; border:none; color:var(--text-2); cursor:pointer; padding:4px}
+.fav.on{color:var(--danger)}
+[data-theme="masculine"] .fav.on{color:var(--gold)}
+.slot{border:1.5px dashed var(--border-2); border-radius:10px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:var(--text-2); cursor:pointer; min-height:220px; background:transparent; font:500 14px 'Inter'}
+.slot .plus{width:44px;height:44px;border-radius:10px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center}
+[data-theme="masculine"] .slot .plus{color:var(--gold)}
+
+/* ---------- Occasions ---------- */
+.occ-row{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px}
+.occ{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 8px 14px; display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer; box-shadow:var(--shadow); color:var(--text); font:500 13px 'Inter'}
+[data-theme="feminine"] .occ{border:none}
+.occ .ms{color:var(--primary); font-size:26px}
+[data-theme="masculine"] .occ .ms{color:var(--gold)}
+.occ.on{outline:2px solid var(--primary)}
+.gen-wrap{display:flex; justify-content:center; margin:26px 0 6px}
+.outfit-card{padding:16px; margin-top:16px; animation:fade .4s ease both}
+.ocol{display:grid; grid-template-columns:1.3fr 1fr; gap:8px}
+.ocol .cell{border-radius:8px; overflow:hidden; background:var(--surface-2); aspect-ratio:1/1.15; display:flex; align-items:center; justify-content:center}
+.ocol .cell.tall{grid-row:span 2; aspect-ratio:auto}
+.ocol img{width:100%; height:100%; object-fit:cover}
+.ocol .ms{font-size:34px; color:var(--text-2); opacity:.5}
+.o-meta{margin-top:14px}
+.o-meta .occ-label{font:600 10.5px 'Inter'; letter-spacing:.14em; color:var(--primary); text-transform:uppercase}
+[data-theme="masculine"] .o-meta .occ-label{color:var(--gold)}
+.o-meta h4{font-family:'Playfair Display',serif; font-weight:600; font-size:20px; margin:4px 0 2px}
+.o-meta .pieces{color:var(--text-2); font-size:13.5px}
+
+/* ---------- Forms / modal ---------- */
+.overlay{position:fixed; inset:0; background:rgba(15,14,12,.45); backdrop-filter:blur(8px); z-index:40; display:flex; align-items:flex-end; justify-content:center; animation:fade .25s ease}
+.sheet{background:var(--bg); width:100%; max-width:460px; max-height:92dvh; overflow-y:auto; border-radius:18px 18px 0 0; padding:22px 22px 34px; animation:up .3s ease}
+@keyframes up{from{transform:translateY(40px); opacity:.4} to{transform:none; opacity:1}}
+.sheet h3{font-family:'Playfair Display',serif; font-size:26px; font-weight:600; margin:2px 0 2px}
+.f-label{font:600 11px 'Inter'; letter-spacing:.14em; text-transform:uppercase; color:var(--text-2); display:block; margin:20px 0 4px}
+.f-in{width:100%; background:transparent; border:none; border-bottom:1px solid var(--border-2); color:var(--text); font:400 16px 'Inter'; padding:9px 2px; outline:none; border-radius:0}
+.f-in:focus{border-bottom-color:var(--primary)}
+select.f-in{appearance:none}
+.capture{border:1.5px dashed var(--border-2); border-radius:12px; min-height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--text-2); cursor:pointer; margin-top:18px; overflow:hidden; position:relative; background:var(--surface-2)}
+.capture img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.capture .cam{font-size:40px; color:var(--primary)}
+[data-theme="masculine"] .capture .cam{color:var(--gold)}
+.capture .t1{font:600 12px 'Inter'; letter-spacing:.14em}
+.capture .t2{font:500 10.5px 'Inter'; letter-spacing:.1em; opacity:.7}
+.seg{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px}
+.seg .chip{padding:7px 14px; font-size:12.5px}
+.tog-row{display:flex; align-items:center; justify-content:space-between; margin-top:26px}
+.tog-row .tt{font:500 15px 'Inter'}
+.tog-row .ts{font:400 12.5px 'Inter'; color:var(--text-2)}
+.switch{width:46px; height:26px; border-radius:9999px; background:var(--surface-3); border:none; position:relative; cursor:pointer; transition:background .25s}
+.switch::after{content:''; position:absolute; top:3px; left:3px; width:20px; height:20px; border-radius:50%; background:#fff; transition:left .25s; box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.switch.on{background:var(--primary)}
+.switch.on::after{left:23px}
+.sheet .close{position:sticky; top:0; float:right; z-index:2}
+.footnote{text-align:center; font-style:italic; color:var(--text-2); font-size:12.5px; margin-top:14px; font-family:'Playfair Display',serif}
+
+/* ---------- Profile ---------- */
+.avatar{width:86px; height:86px; border-radius:50%; background:var(--primary-soft); color:var(--primary); display:flex; align-items:center; justify-content:center; margin:18px auto 10px; font-family:'Playfair Display',serif; font-size:34px}
+[data-theme="masculine"] .avatar{color:var(--gold)}
+.persona{padding:20px; margin-top:14px; font-style:italic; font-size:15px; line-height:1.65; color:var(--text)}
+.persona .ptags{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; font-style:normal}
+.ptag{background:var(--chip); font:600 11px 'Inter'; letter-spacing:.1em; padding:6px 12px; border-radius:4px; color:var(--text-2); text-transform:capitalize}
+.palette{display:flex; gap:12px; margin-top:14px; overflow-x:auto; padding-bottom:6px}
+.pal{flex-shrink:0; text-align:center}
+.pal .sw{width:56px; height:56px; border-radius:8px; border:1px solid var(--border)}
+.pal .pn{font:500 11.5px 'Inter'; color:var(--text-2); margin-top:6px; text-transform:capitalize}
+.sizes{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px}
+.size{padding:14px 8px; text-align:center}
+.size .sl{font:600 10px 'Inter'; letter-spacing:.14em; color:var(--text-2); text-transform:uppercase}
+.size .sv{font-family:'Playfair Display',serif; font-size:19px; margin-top:4px}
+.goal{display:flex; align-items:center; gap:14px; padding:16px; margin-top:10px; border-left:3px solid var(--border-2); cursor:pointer}
+.goal.done{border-left-color:var(--primary)}
+.goal .gc{color:var(--text-2)}
+.goal.done .gc{color:var(--primary)}
+[data-theme="masculine"] .goal.done .gc{color:var(--gold)}
+.goal .gt{font:600 14.5px 'Inter'}
+.goal.done .gt{text-decoration:line-through; opacity:.65}
+.goal .gn{font:400 12.5px 'Inter'; color:var(--text-2)}
+
+/* ---------- Bottom nav ---------- */
+nav.bottom{position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:460px; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(14px); border-top:1px solid var(--border); display:flex; z-index:30; padding:6px 4px calc(10px + env(safe-area-inset-bottom))}
+nav.bottom button{flex:1; background:none; border:none; color:var(--text-2); cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:3px; font:500 10.5px 'Inter'; letter-spacing:.04em; padding:7px 0; border-radius:12px}
+nav.bottom button.on{color:var(--primary)}
+[data-theme="masculine"] nav.bottom button.on{color:var(--gold)}
+nav.bottom button.on .pill{background:var(--primary-soft); border-radius:9999px; padding:3px 16px}
+nav.bottom .pill{padding:3px 16px}
+
+/* ---------- FAB / toast / skeleton ---------- */
+.fab{position:fixed; right:calc(50% - 230px + 20px); bottom:96px; width:56px; height:56px; border-radius:14px; background:var(--primary); color:var(--on-primary); border:none; box-shadow:var(--shadow); cursor:pointer; z-index:25; display:flex; align-items:center; justify-content:center}
+@media (max-width:480px){.fab{right:20px}}
+.toast{position:fixed; left:50%; transform:translateX(-50%) translateY(20px); bottom:110px; background:var(--text); color:var(--bg); font:500 13.5px 'Inter'; padding:12px 22px; border-radius:9999px; z-index:60; opacity:0; transition:all .3s; pointer-events:none; box-shadow:0 6px 24px rgba(0,0,0,.25); max-width:85%; text-align:center}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+.skel{border-radius:10px; background:linear-gradient(100deg, var(--surface-2) 40%, var(--surface-3) 50%, var(--surface-2) 60%); background-size:200% 100%; animation:shimmer 1.4s infinite}
+@keyframes shimmer{from{background-position:180% 0} to{background-position:-20% 0}}
+.empty{text-align:center; color:var(--text-2); padding:36px 20px; font-size:14.5px}
+.empty .ms{font-size:44px; opacity:.4; display:block; margin:0 auto 10px}
+.del-link{color:var(--danger); background:none; border:none; font:600 12px 'Inter'; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; padding:10px 0; width:100%; margin-top:8px}
+
+/* ============================================================
+   Production additions: auth, install banner, update toast,
+   safe-area padding, and reduced-motion support.
+   ============================================================ */
+
+/* Respect users who prefer less motion (accessibility + Play policy). */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+
+/* ---------- Auth screen ---------- */
+.auth-wrap{ min-height:100dvh; display:flex; flex-direction:column; justify-content:center; padding:32px 26px calc(32px + env(safe-area-inset-bottom)); max-width:460px; margin:0 auto; }
+.auth-logo{ width:96px; height:96px; margin:0 auto 8px; display:block }
+.auth-brand{ font-family:'Playfair Display',serif; font-weight:600; font-size:30px; text-align:center; letter-spacing:.02em; color:var(--text) }
+.auth-tag{ text-align:center; color:var(--text-2); font-size:14.5px; margin:6px 0 30px; font-style:italic; font-family:'Playfair Display',serif }
+.auth-card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:24px 22px 28px }
+[data-theme="feminine"] .auth-card{ border:none }
+.auth-card h2{ font-family:'Playfair Display',serif; font-weight:600; font-size:22px; margin:0 0 2px }
+.auth-switch{ text-align:center; margin-top:20px; color:var(--text-2); font-size:13.5px }
+.auth-switch button{ background:none; border:none; color:var(--primary); font:600 13.5px 'Inter'; cursor:pointer; padding:2px 4px }
+[data-theme="masculine"] .auth-switch button{ color:var(--gold) }
+.auth-err{ color:var(--danger); font-size:13px; margin-top:14px; min-height:18px; text-align:center }
+.auth-oauth{ display:flex; gap:10px; margin-top:16px }
+.auth-divider{ display:flex; align-items:center; gap:12px; color:var(--text-2); font-size:11px; letter-spacing:.14em; text-transform:uppercase; margin:22px 0 6px }
+.auth-divider::before, .auth-divider::after{ content:''; flex:1; height:1px; background:var(--border) }
+.spin{ display:inline-block; width:16px; height:16px; border:2px solid currentColor; border-right-color:transparent; border-radius:50%; animation:rot .7s linear infinite; vertical-align:middle }
+@keyframes rot{ to{ transform:rotate(360deg) } }
+
+/* ---------- Install banner + update toast ---------- */
+.install-banner{ position:fixed; left:50%; transform:translateX(-50%) translateY(140%); bottom:calc(78px + env(safe-area-inset-bottom)); width:calc(100% - 32px); max-width:428px; background:var(--surface); border:1px solid var(--border); border-radius:14px; box-shadow:0 10px 34px rgba(0,0,0,.22); padding:14px 16px; display:flex; align-items:center; gap:14px; z-index:55; transition:transform .35s cubic-bezier(.2,.8,.2,1) }
+.install-banner.show{ transform:translateX(-50%) translateY(0) }
+.install-banner .ib-icon{ width:42px; height:42px; border-radius:10px; flex-shrink:0 }
+.install-banner .ib-t{ font:600 14px 'Inter'; line-height:1.3 }
+.install-banner .ib-s{ font:400 12px 'Inter'; color:var(--text-2) }
+.install-banner .ib-x{ background:none; border:none; color:var(--text-2); cursor:pointer; padding:6px }
+
+.update-toast{ position:fixed; left:50%; transform:translateX(-50%); bottom:calc(110px + env(safe-area-inset-bottom)); background:var(--text); color:var(--bg); border-radius:9999px; padding:10px 12px 10px 20px; display:flex; align-items:center; gap:12px; z-index:60; box-shadow:0 6px 24px rgba(0,0,0,.28); font:500 13.5px 'Inter'; animation:up .3s ease }
+.update-toast button{ background:var(--bg); color:var(--text); border:none; border-radius:9999px; font:600 12px 'Inter'; letter-spacing:.06em; padding:8px 16px; cursor:pointer }
+
+/* Offline indicator dot in header */
+.offline-dot{ position:absolute; top:10px; right:10px; width:8px; height:8px; border-radius:50%; background:var(--danger); box-shadow:0 0 0 3px var(--bg) }

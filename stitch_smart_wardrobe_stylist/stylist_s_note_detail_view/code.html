@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELÉVATION - Stylist's Note</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fdf9f5",
+                        "on-surface-variant": "#424845",
+                        "secondary": "#615e56",
+                        "on-primary-fixed-variant": "#374b43",
+                        "secondary-fixed-dim": "#cac6bc",
+                        "primary-fixed": "#d1e8dd",
+                        "primary-fixed-dim": "#b5ccc1",
+                        "on-primary-container": "#263932",
+                        "on-secondary-fixed-variant": "#49473f",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "surface-container-high": "#ebe7e4",
+                        "on-secondary-container": "#65635a",
+                        "secondary-container": "#e4dfd5",
+                        "tertiary-fixed": "#e4e2dd",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c8c4",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "error": "#ba1a1a",
+                        "tertiary": "#5e5e5b",
+                        "primary": "#4e635a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1c1b1a",
+                        "on-primary-fixed": "#0b1f18",
+                        "surface-container-low": "#f7f3ef",
+                        "background": "#fdf9f5",
+                        "surface-container-highest": "#e6e2de",
+                        "surface": "#fdf9f5",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f4f0ec",
+                        "inverse-surface": "#31302e",
+                        "surface-dim": "#ddd9d6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#353632",
+                        "surface-variant": "#e6e2de",
+                        "primary-container": "#8da399",
+                        "outline": "#727875",
+                        "on-background": "#1c1b1a",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "surface-tint": "#4e635a",
+                        "on-secondary-fixed": "#1d1c15",
+                        "secondary-fixed": "#e7e2d8",
+                        "surface-container": "#f1edea",
+                        "tertiary-container": "#9f9e9a",
+                        "inverse-primary": "#b5ccc1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-sm": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes subtleFadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up {
+            animation: subtleFadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        .shimmer-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-overlay::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0) 45%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 55%
+            );
+            animation: shimmer 6s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translate(-30%, -30%); }
+            100% { transform: translate(30%, 30%); }
+        }
+        .custom-scroll::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/20">
+<!-- Top Navigation -->
+<header class="bg-background dark:bg-background flex justify-between items-center w-full px-margin-mobile h-16 fixed top-0 z-50">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-primary/5 transition-colors duration-300 p-2 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-headline-md font-headline-md tracking-widest text-primary dark:text-primary-fixed-dim uppercase">ELÉVATION</h1>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-primary/5 transition-colors duration-300 p-2 rounded-full">
+<span class="material-symbols-outlined">share</span>
+</button>
+</header>
+<main class="pt-16 pb-32 max-w-screen-xl mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="mt-base md:mt-md grid grid-cols-1 md:grid-cols-12 gap-md items-center">
+<div class="md:col-span-7 animate-fade-up">
+<div class="shimmer-overlay aspect-[4/5] rounded-lg overflow-hidden bg-surface-container shadow-sm group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-end editorial studio shot of a luxurious charcoal grey Cashmere and Silk scarf draped elegantly over a minimalist white limestone pedestal. The lighting is soft and directional, highlighting the fine texture and delicate weave of the fabric. The background is a muted, warm cream tone, creating a calm and sophisticated masculine boutique atmosphere. High-resolution photography focusing on the soft folds and premium sheen of the material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAy-_24SoR4XSZ7PQ2d4G23oGRCkFcHZ5nzsxDdjQeVCnNOFhYeUHrIdirWiLM1zpI7m6zAYThMaScDz9x7N7902203WXTY0XlO3Vf1NR7fxxzq2k2mvIf2s7Aej7Ow0YBZRZ_M-10STLGUAUbfmHUa87v6S4Clm70bs4-LXqLitR3Bila9_JkaUoJvd1mXjVq1Px3BkAynIdIjTr0T9QjoLEV_yONMBGfTUchjF0pbqS_2G0QrUYR2MwfF85Wty9vyiHeawOeIVs"/>
+</div>
+</div>
+<div class="md:col-span-5 space-y-md animate-fade-up" style="animation-delay: 0.2s">
+<div class="space-y-xs">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">A/W Collection — Wishlist</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Cashmere Silk Scarf</h2>
+<p class="font-headline-sm text-headline-sm text-primary">$425</p>
+</div>
+<div class="pt-base border-t border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm italic text-on-surface-variant mb-xs">Stylist's Note</h3>
+<p class="font-body-lg text-body-lg text-secondary italic leading-relaxed">
+                        "Drape loosely over a modern trench for an effortless Parisian silhouette. The muted charcoal hue serves as a sophisticated anchor for a tonal monochrome ensemble."
+                    </p>
+</div>
+<div class="flex gap-base pt-md">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-4 px-md rounded hover:bg-primary/90 transition-all flex items-center justify-center gap-base">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                        ADD TO CLOSET
+                    </button>
+<button class="p-4 border border-outline text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+</div>
+</section>
+<!-- The Fabric & Craft -->
+<section class="mt-xl grid grid-cols-1 md:grid-cols-2 gap-xl items-center bg-surface-container-low p-md md:p-lg rounded-xl">
+<div class="space-y-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">The Fabric &amp; Craft</h3>
+<p class="text-body-md text-secondary leading-relaxed">
+                    Sourced from the inner plateaus of Inner Mongolia, our Grade A cashmere is blended with Grade 6A mulberry silk to create a textile that is both exceptionally warm and remarkably fluid. Each piece is finished with a traditional hand-rolled hem in our Northern Italian workshop, a process that ensures the edges maintain their structure and elegance for years to come.
+                </p>
+<div class="grid grid-cols-2 gap-md pt-base">
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase">Composition</p>
+<p class="font-body-md text-body-md text-on-surface">70% Cashmere, 30% Silk</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase">Origin</p>
+<p class="font-body-md text-body-md text-on-surface">Biella, Italy</p>
+</div>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden h-64 md:h-full bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Macro close-up photography of the intricate weave of a cashmere and silk blend fabric. The fibers are visible and look incredibly soft and premium. Soft shadows emphasize the depth of the textile. The color is a deep charcoal slate. The lighting is diffuse and high-end, evoking a sense of heritage craftsmanship and luxury quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa1LOitVHPzTPuuML0M_Kyjf71KBsLVKumvyEWVuV6MA2Jc2-bCCyZHDNc1wLlbkX7ci8u8VGN3xZ9Ku6yl_F_8h2PT_Q8xGZGwGcrsswBfTuhcyq-6d9sANsjPB22n8GQcEE3HF4ss8VkFIsZvgu2B_uw7UUtToW3IMV6Bz4HslvH3Dh0aNme4nj0xYbGLoTrRYkMqrdGHhkokZldtNBQD-himS2DQiAGiEXd1mHnya2e7BI36q0Sq9i3RsM8xcuy_vIn2vbjtno"/>
+</div>
+</section>
+<!-- Perfect Pairings -->
+<section class="mt-xl space-y-md">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Perfect Pairings</h3>
+<p class="text-body-md text-secondary">Items already in your closet that complete the look.</p>
+</div>
+<button class="text-label-md font-label-md text-primary hover:underline underline-offset-4">VIEW ALL OUTFITS</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+<!-- Pairing 1 -->
+<div class="space-y-sm group cursor-pointer">
+<div class="aspect-[3/4] bg-white shadow-sm overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist full-length shot of a tailored modern trench coat in a warm tobacco-brown hue. The coat is displayed on a high-end invisible mannequin against a soft beige background. The styling is crisp and clean, highlighting the sharp collar and belted waist. The aesthetic is modern-classic luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJAeLe6zRsVGqkXZ5FmG2_XMYszGVJ9vKGk1Qopqtg4FvJX6ExZCuvH4upq0O90Siq0bVFdDUEkRQw9G4nEdCs7arjsbIgnGoaUOXAzmnhx4iizQWZBoy42qzt9tQpavWCtjEG3H4HP_cyi17xX6FmwwBmkm8yIRmNKwdytHvmyfIQIUgZXz3-8mPHrBOpdhgHUGUA8rhN-inX3GFJmg7RwBnNX7hjUHG0u5BLrlbct5XrJI012UJmIDOpWdZ-imVWkbWjfSmyBdo"/>
+<div class="absolute top-2 right-2 bg-background/80 backdrop-blur-sm px-2 py-1 rounded">
+<span class="material-symbols-outlined text-primary text-[16px] align-middle">check_circle</span>
+<span class="text-label-sm text-label-sm text-on-surface-variant align-middle">IN CLOSET</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Modern Trench</h4>
+<p class="text-label-sm font-label-sm text-secondary">Tobacco Twill</p>
+</div>
+</div>
+<!-- Pairing 2 -->
+<div class="space-y-sm group cursor-pointer">
+<div class="aspect-[3/4] bg-white shadow-sm overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional studio shot of high-waisted charcoal wool trousers with a sharp front crease. The fabric has a subtle herringbone texture. Displayed in a minimalist way with clean lines and soft lighting. The tone is sophisticated and professional, fitting into a curated masculine wardrobe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ijS-THDl-JoksMPgWMd3AaxF0BEY0eJvBJ4DVFpJg9_Jx48vBiWFx5AFoMOTYzh6IKl3ywOlesU307FXyP6jP2vuUDgKOdSpE4zRsLYmh-jrlfMQh51JNcEkNKhcGPXZgNY0y06Pgqhyiziy1m7_NQk5Lbz4UtaMFiwgwBYWnN_7BbhrRdXkYPOPkwR7AqeW-_5gUnk6bBaZtyOjtjByeU9ivW3d-Es6Q90wr8OVdBYWOclWZom-v8Is0-UxS5F3Nj09CbAxhkQ"/>
+<div class="absolute top-2 right-2 bg-background/80 backdrop-blur-sm px-2 py-1 rounded">
+<span class="material-symbols-outlined text-primary text-[16px] align-middle">check_circle</span>
+<span class="text-label-sm text-label-sm text-on-surface-variant align-middle">IN CLOSET</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Wool Trousers</h4>
+<p class="text-label-sm font-label-sm text-secondary">Herringbone Slate</p>
+</div>
+</div>
+<!-- Empty Slot for Styling Suggestion -->
+<div class="border border-dashed border-outline-variant rounded-lg flex flex-col items-center justify-center p-md text-center space-y-sm group hover:border-primary transition-colors hidden md:flex">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+<p class="font-label-md text-label-md text-secondary">Add a piece to see more pairing suggestions</p>
+</div>
+</div>
+</section>
+<!-- Save for Later Secondary -->
+<div class="mt-xl text-center">
+<button class="text-secondary font-label-md text-label-md hover:text-on-surface transition-colors border-b border-outline pb-1">
+                SAVE TO WISHLIST FOR LATER
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Contextually mapped to 'Closet' as this is a wardrobe management flow) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container-lowest dark:bg-surface-container-lowest shadow-sm rounded-t-full md:hidden">
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant/10 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-full px-4 py-1 transition-transform duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">checkroom</span>
+<span class="text-label-sm font-label-sm">Closet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant/10 transition-all" href="#">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span class="text-label-sm font-label-sm">Outfits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant/10 transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Intersection Observer for fade-in animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('opacity-0');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

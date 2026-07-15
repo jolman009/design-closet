@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#5e5e5b",
+                      "on-tertiary-fixed-variant": "#474744",
+                      "surface-variant": "#e6e2de",
+                      "primary-fixed-dim": "#b5ccc1",
+                      "secondary-fixed": "#e7e2d8",
+                      "on-background": "#1c1b1a",
+                      "on-surface-variant": "#424845",
+                      "on-primary-fixed": "#0b1f18",
+                      "primary-fixed": "#d1e8dd",
+                      "on-primary-fixed-variant": "#374b43",
+                      "tertiary-fixed-dim": "#c8c6c2",
+                      "secondary-fixed-dim": "#cac6bc",
+                      "secondary-container": "#e4dfd5",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#31302e",
+                      "on-secondary-fixed-variant": "#49473f",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#1b1c19",
+                      "primary-container": "#8da399",
+                      "error": "#ba1a1a",
+                      "surface-container": "#f1edea",
+                      "outline-variant": "#c2c8c4",
+                      "on-tertiary-container": "#353632",
+                      "surface-container-low": "#f7f3ef",
+                      "on-secondary-container": "#65635a",
+                      "primary": "#4e635a",
+                      "background": "#fdf9f5",
+                      "surface": "#fdf9f5",
+                      "secondary": "#615e56",
+                      "inverse-primary": "#b5ccc1",
+                      "on-secondary-fixed": "#1d1c15",
+                      "surface-bright": "#fdf9f5",
+                      "on-surface": "#1c1b1a",
+                      "tertiary-container": "#9f9e9a",
+                      "on-primary": "#ffffff",
+                      "outline": "#727875",
+                      "surface-tint": "#4e635a",
+                      "tertiary-fixed": "#e4e2dd",
+                      "surface-dim": "#ddd9d6",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#e6e2de",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-high": "#ebe7e4",
+                      "on-primary-container": "#263932",
+                      "inverse-on-surface": "#f4f0ec"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "lg": "48px",
+                      "margin-mobile": "20px",
+                      "xs": "4px",
+                      "xl": "80px",
+                      "margin-desktop": "64px",
+                      "base": "8px",
+                      "sm": "12px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Playfair Display"],
+                      "label-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-sm": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-sm": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed min-h-screen pb-24">
+<!-- Top Navigation -->
+<header class="bg-background dark:bg-surface fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile h-16 w-full">
+<div class="flex items-center space-x-4">
+<button class="hover:opacity-80 transition-opacity scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">menu</span>
+</button>
+</div>
+<div class="font-headline-md text-headline-md tracking-widest text-on-background dark:text-on-surface uppercase">ELÉVATION</div>
+<div class="flex items-center space-x-4">
+<button class="hover:opacity-80 transition-opacity scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-original-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Header Section -->
+<section class="mb-lg entrance-anim">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-base">Curated Wishlist</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">Refine your aesthetic and complete your Style Persona with pieces hand-selected for your existing collection.</p>
+</section>
+<!-- Complete the Look (Bento / Featured) -->
+<section class="mb-xl entrance-anim delay-1">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Complete the Look</h2>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest cursor-pointer hover:underline">View All Suggestions</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Featured Item -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-lg bg-surface-container shadow-sm transition-all duration-500 hover:scale-[1.01]">
+<div class="absolute inset-0 shimmer-overlay opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="flex flex-col md:flex-row h-full">
+<div class="w-full md:w-1/2 h-80 md:h-auto relative">
+<img class="w-full h-full object-cover" data-alt="A cinematic, low-angle studio photograph of a man's high-end charcoal cashmere scarf draped elegantly over a deep tobacco leather chair. The lighting is moody and dramatic with soft shadows, highlighting the rich textures of the fabric. The aesthetic is ultra-minimalist and masculine, evoking the quiet luxury of a boutique dressing room. Soft ambient occlusion creates depth against a neutral grey backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVjdGQiZp7pjyKkGYU-zUG71wIKz8gnTtk1RcWd3DPHHHfYnCK4AzwWZsUQ2pqg6h-mHuhy0mNDgVFiQ_69GWOlU96I3R91KzlwexaaX9Avd3fXXi1dmMQExXYfSY0B-7tyvDU3pB4V7U-55FGh_Abw9LLkYY3MxFRqUK4Uld9K7Hi-G2qKUYwMrkB5APxnF8IB0xlEG1bsxpj5m9YjV4Hwbj-4BJsWG2HulzJ7zuZKc8Zq2viB_6CnUYXMMxJm0zLZLlCD5iXIW8">
+</div>
+<div class="w-full md:w-1/2 p-md flex flex-col justify-center">
+<div class="bg-primary-container/20 text-on-primary-container px-3 py-1 rounded-full text-label-sm inline-block w-fit mb-sm">Pairs with your Modern Trench</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Cashmere Silk Scarf</h3>
+<p class="text-secondary font-label-md mb-md uppercase tracking-wider">Loro Piana • $845</p>
+<p class="text-on-surface-variant font-body-md mb-lg">A subtle elevation to your winter silhouette. The deep slate tone complements the structure of your trench coat perfectly.</p>
+<div class="flex space-x-sm">
+<button class="bg-primary text-on-primary px-lg py-3 rounded-lg font-label-md uppercase tracking-widest hover:opacity-90 transition-all">Add to Closet</button>
+<button class="border border-outline text-secondary p-3 rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Suggestion -->
+<div class="md:col-span-4 group bg-surface-container-low p-md rounded-lg shadow-sm flex flex-col justify-between transition-all duration-500 hover:scale-[1.02]">
+<div>
+<div class="h-48 overflow-hidden rounded mb-md">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A pair of premium black leather Chelsea boots with a clean, polished finish, shot in a minimalist studio setting. The lighting is crisp and cool, accentuating the sleek silhouette of the boots. They are placed on a light grey concrete surface, maintaining a professional boutique editorial feel. The composition is focused and architectural." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_UbUVfaMHZKVh1_VYAZRMf6HmJ6PVOGDXQ7VmPtD1Bm38on8sJbleXpYPqfM0CftViOmsHNhhTsNOZUCJB2wAC9T8RQMhw1NOkltuvHZlV8aG4Anhd4U-l9CGTRcW3wRP9O7IRBz7CxXrvqmkhyeOOEwdmE7tFFOnTBJmCXCzOB0zDNpCVUiNxeNQEgJ1TK6UquCvGZOF3zOrcsaRj9QNH8V-zin6C3EGQ7dScguom9vwZvVxjI_7M1PpFSa6ORU4rYkqhaII7Go">
+</div>
+<p class="text-label-sm text-primary uppercase mb-xs">Essential Found</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">City Chelsea Boot</h3>
+<p class="text-secondary font-label-md uppercase tracking-wider">Saint Laurent • $1,150</p>
+</div>
+<button class="mt-md w-full border border-outline text-secondary py-3 rounded-lg font-label-md uppercase tracking-widest hover:bg-surface-container transition-colors">Buy Now</button>
+</div>
+</div>
+</section>
+<!-- Style Goals -->
+<section class="mb-xl entrance-anim delay-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-md">Style Goals</h2>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="divide-y divide-outline-variant">
+<div class="p-md flex items-center justify-between group cursor-pointer hover:bg-background transition-colors">
+<div class="flex items-center space-x-md">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">checkroom</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface text-lg">Oversized Blazer in Deep Navy</h4>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-tighter">Searching for: Wool, Double-breasted</p>
+</div>
+</div>
+<div class="flex items-center space-x-sm">
+<span class="text-label-sm text-primary bg-primary-fixed px-3 py-1 rounded-full uppercase">3 Matches Found</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+<div class="p-md flex items-center justify-between group cursor-pointer hover:bg-background transition-colors">
+<div class="flex items-center space-x-md">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">footprint</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface text-lg">Minimalist Suede Loafers</h4>
+<p class="text-label-sm text-on-surface-variant uppercase tracking-tighter">Preference: Tobacco or Sand shade</p>
+</div>
+</div>
+<div class="flex items-center space-x-sm">
+<span class="text-label-sm text-secondary bg-secondary-container px-3 py-1 rounded-full uppercase">Monitoring</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+<div class="p-md flex items-center justify-between group cursor-pointer hover:bg-background transition-colors">
+<div class="flex items-center space-x-md">
+<div class="w-12 h-12 border border-dashed border-outline-variant rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+<h4 class="font-label-md text-secondary text-lg">Define New Style Goal</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Picks -->
+<section class="entrance-anim delay-3">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Personalized Curation</h2>
+<div class="flex space-x-sm">
+<button class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-secondary hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg mb-sm bg-surface-container">
+<div class="absolute inset-0 shimmer-overlay opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxury wool turtleneck sweater in a deep slate charcoal color, displayed in a high-end minimalist boutique style. The lighting is soft and top-down, creating gentle highlights on the knit texture. The background is a warm tertiary cream, providing a clean and professional contrast. The sweater is presented with impeccable tailoring and sculptural presence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKonY7hADSHnOAu1VeNV-fDbJoLr19lHWSZuqY1QoEv8tK-vHESME41NTeQFmvViTrPw2zK-W4RoGDRxRJBtxY7HAI1NaPnorESkheCx3hB6B-rFpcX16V6VGNRdSAkXy1_pXocgB_CNHoX6hG8BFCqCmqocTWu07P4Fgx2fzrrulkWGg09-kqRZMZYr6ThrQRRixzDKFKw826UkMtlH2whnoMkb_ixdrKIfJHoECSsmSIBJTkDvHnQEE6B7yVQFiaiFuubXaISKo">
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-2 rounded-full shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
+<span class="material-symbols-outlined text-primary">add_shopping_cart</span>
+</button>
+</div>
+<p class="font-headline-sm text-[10px] text-primary uppercase tracking-widest mb-xs">Matches Style Goal</p><h5 class="font-label-md text-on-surface">Wool Turtleneck</h5>
+<p class="text-label-sm text-secondary uppercase tracking-widest text-[10px] mb-xs">Ami Paris</p>
+<p class="font-body-md text-on-surface-variant">$420</p>
+</div>
+<!-- Product Card 2 -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg mb-sm bg-surface-container">
+<div class="absolute inset-0 shimmer-overlay opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Exquisitely tailored charcoal dress trousers made from fine wool, hung against a minimalist warm grey wall in an upscale fashion showroom. The fabric reflects a soft, luxurious sheen under directional studio lighting. The aesthetic is clean, professional, and masculine, focusing on the high-quality craftsmanship and sharp creases of the garment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCrDLZumTZTDE36737SSC5TSh4waIo7T9Ba80DjdydQrwL54u0yOcct8Oyd-fvqQ-zt4KqUOGsfWdbckqsBtlQ3uf2JjTyuVtVZmaXDs41j2tP0OgRZQ4ozC2eqh-DOAGkJAob5PXYu2NKgJ5re8uIYbb_tf6_Cp7g7SUlMpb5PlvQdgJr4-_y-2BEq8kk9yb3lB9nYyWo4gL7FUK29x1Uh4m70NkWeTLXYmWIQq4AXAN310hOXpGMZFwaHFOodR7y-HpnoFhb0aA">
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-2 rounded-full shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
+<span class="material-symbols-outlined text-primary">add_shopping_cart</span>
+</button>
+</div>
+<p class="font-headline-sm text-[10px] text-primary uppercase tracking-widest mb-xs">Pairs with 'Modern Trench'</p><h5 class="font-label-md text-on-surface">Tailored Trouser</h5>
+<p class="text-label-sm text-secondary uppercase tracking-widest text-[10px] mb-xs">Zegna</p>
+<p class="font-body-md text-on-surface-variant">$890</p>
+</div>
+<!-- Product Card 3 -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg mb-sm bg-surface-container">
+<div class="absolute inset-0 shimmer-overlay opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxury leather weekender bag in a rich tobacco brown, placed on a dark slate floor in a minimalist gallery setting. Soft side-lighting highlights the grain of the premium leather and the burnished gold hardware. The mood is sophisticated and travel-ready, adhering to a high-end masculine aesthetic with deep, warm tones and impeccable styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMtdEOxOEQHNgO1-F41bNsZ1ZBEgNAYaXEbvN2Iao760yzIQ0zBA5-j-8JmyYtI-PVEyzVdiPPfelrjJ_9jPCqbvXkMyc2hJcHM1L3WfSHp9Viu775Ze2O9zVjnUrPDWoTkdrZ1bMORjPomHBWZZgZBFCi5lA1-Kav_5nQovLE_LORz2cYxFcAFiv0AuL7heRbFn_BAzKEie0z9i-nyrQMIfr1pDNcvVN8dqn0PqWVNGd_l-0zf3H5PqgtqI1BY2TRNPBi-HMjNKs">
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-2 rounded-full shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
+<span class="material-symbols-outlined text-primary">add_shopping_cart</span>
+</button>
+</div>
+<p class="font-headline-sm text-[10px] text-primary uppercase tracking-widest mb-xs">Completes 'Travel' Capsule</p><h5 class="font-label-md text-on-surface">Leather Weekender</h5>
+<p class="text-label-sm text-secondary uppercase tracking-widest text-[10px] mb-xs">Berluti</p>
+<p class="font-body-md text-on-surface-variant">$3,450</p>
+</div>
+<!-- Product Card 4 -->
+<div class="group">
+<div class="relative aspect-[3/4] overflow-hidden rounded-lg mb-sm bg-surface-container">
+<div class="absolute inset-0 shimmer-overlay opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist stainless steel chronograph watch with a black leather strap, displayed against a dark charcoal textured background. High-contrast lighting creates sharp highlights on the metallic surfaces and leather texture. The overall look is modern, architectural, and masculine, evoking a sense of timeless precision and luxury boutique curation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoaWKDvhqJ5Rsk1u2NWkEF1BpWIfR1yN3B8ucgW7A8QIuljeGNCxqA6aNJzDQzFUEaKExHqRRMJgnks3sbBD5BHv_DmyXPcFZ8YIJO1N6fOmIxXM9h0ICddevuXNmqKaNk-Or8MJ01FTk8J6umY_KjTxvmNKddkGq1-VHF29cm6retdxayjR8hmNyWM48fdGAbPgi0UWXALelndQAgiTC5PK6JouT6Q9RJc67BdWib6GPjdtUbnbXUdbD5uDGuhIjMumiVwbUiFZ0">
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-2 rounded-full shadow-lg opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
+<span class="material-symbols-outlined text-primary">add_shopping_cart</span>
+</button>
+</div>
+<p class="font-headline-sm text-[10px] text-primary uppercase tracking-widest mb-xs">Signature Essential</p><h5 class="font-label-md text-on-surface">Classic Chronograph</h5>
+<p class="text-label-sm text-secondary uppercase tracking-widest text-[10px] mb-xs">IWC Schaffhausen</p>
+<p class="font-body-md text-on-surface-variant">$5,200</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface dark:bg-surface-dim shadow-sm rounded-t-full">
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-low transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-low transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined">checkroom</span>
+<span class="font-label-sm text-label-sm">Closet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-low transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined">dry_cleaning</span>
+<span class="font-label-sm text-label-sm">Outfits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold hover:bg-surface-container-low transition-colors px-4 py-1 scale-105 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="font-label-sm text-label-sm">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-on-surface-variant hover:bg-surface-container-low transition-colors px-4 py-1" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for product cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for adding JS-driven micro-shimmer or GSAP animations
+            });
+        });
+
+        // Horizontal scroll for style goals on mobile if needed (already handled by grid/bento)
+    </script>
+
+</body></html>

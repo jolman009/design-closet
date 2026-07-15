@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Digital Asset Links for the Android TWA live at:
+#   /.well-known/assetlinks.json

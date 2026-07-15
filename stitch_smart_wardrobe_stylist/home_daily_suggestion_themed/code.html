@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>ELÉVATION | Daily Suggestion</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#ebe7e4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#49473f",
+                    "background": "#fdf9f5",
+                    "primary-fixed": "#d1e8dd",
+                    "inverse-surface": "#31302e",
+                    "primary": "#4e635a",
+                    "inverse-on-surface": "#f4f0ec",
+                    "inverse-primary": "#b5ccc1",
+                    "surface-tint": "#4e635a",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#cac6bc",
+                    "secondary": "#615e56",
+                    "surface-variant": "#e6e2de",
+                    "outline": "#727875",
+                    "surface-container": "#f1edea",
+                    "on-primary-fixed-variant": "#374b43",
+                    "primary-container": "#8da399",
+                    "on-primary-fixed": "#0b1f18",
+                    "on-surface": "#1c1b1a",
+                    "on-secondary-container": "#65635a",
+                    "primary-fixed-dim": "#b5ccc1",
+                    "tertiary-container": "#9f9e9a",
+                    "surface": "#fdf9f5",
+                    "on-secondary-fixed": "#1d1c15",
+                    "on-tertiary-container": "#353632",
+                    "on-primary-container": "#263932",
+                    "tertiary-fixed": "#e4e2dd",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "tertiary": "#5e5e5b",
+                    "on-background": "#1c1b1a",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#e7e2d8",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#424845",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#ddd9d6",
+                    "surface-container-highest": "#e6e2de",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#1b1c19",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f7f3ef",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "secondary-container": "#e4dfd5",
+                    "outline-variant": "#c2c8c4",
+                    "surface-bright": "#fdf9f5",
+                    // Masculine Palette Overrides (Dark Mode)
+                    "dark-background": "#1a1c1e",
+                    "dark-primary": "#a6c8ff",
+                    "dark-surface": "#1a1c1e",
+                    "dark-on-surface": "#e2e2e6",
+                    "dark-surface-container": "#2f3033",
+                    "dark-secondary": "#bfc6dc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "md": "24px",
+                    "lg": "48px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "margin-desktop": "64px",
+                    "gutter": "16px",
+                    "xl": "80px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-sm": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 4px 20px -2px rgba(78, 99, 90, 0.1);
+        }
+        .dark .soft-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+        }
+        .backdrop-blur-nav {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .scale-hover {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .scale-hover:hover {
+            transform: scale(1.02);
+        }
+
+        /* Masculine (Dark Mode) UI Overrides */
+        .dark {
+            background-color: #1a1c1e !important;
+            color: #e2e2e6 !important;
+        }
+        .dark header, .dark nav {
+            background-color: #1a1c1e !important;
+        }
+        .dark .bg-surface-container-lowest {
+            background-color: #2f3033 !important;
+        }
+        .dark .text-primary {
+            color: #a6c8ff !important;
+        }
+        .dark .bg-primary {
+            background-color: #3b5ba1 !important;
+        }
+        .dark .text-secondary {
+            color: #c4c6cf !important;
+        }
+        .dark .bg-secondary-container {
+            background-color: #44474e !important;
+        }
+        .dark .text-on-secondary-container {
+            color: #e2e2e6 !important;
+        }
+        .dark .border-surface-variant\/20 {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        .dark .bg-surface-container {
+            background-color: #2f3033 !important;
+        }
+        .dark .text-on-surface {
+            color: #e2e2e6 !important;
+        }
+        .dark .border-outline-variant {
+            border-color: #44474e !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed transition-colors duration-500">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full h-16 z-50 bg-background flex justify-between items-center px-margin-mobile transition-all duration-300">
+<div class="flex items-center gap-base">
+<button class="p-base hover:bg-primary/5 transition-colors duration-300 rounded-full">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</div>
+<div class="flex items-center gap-xs">
+<img alt="Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQUttaceJ1rmrh_f45Ns0Q-9xiymH-SoUOSC5zuF8wUs8A4Tygzp6JdNJEnYWZqcxTcuGqJ6nwvuI50Qfsd1OkOTSHM78rtL9qK4WhggtXGwnk8V7lPcFEf1_w6gJnb0LTd0Dk_D0WahriF-47-KFOBcEHFZcX96jrhH7LjdZB25AVw0O6R0QLTD0s29huGjAdJa_WCsnRsXwTQr1o-UBn2lE8znKpuMxlDvV5_7riyVVkj72_KEKQc1p0UWNkD10zJh4AyhLL4vc"/>
+<h1 class="text-headline-md font-headline-md tracking-widest text-primary uppercase">ELÉVATION</h1>
+</div>
+<button class="p-base hover:bg-primary/5 transition-colors duration-300 rounded-full">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile max-w-screen-xl mx-auto">
+<!-- Style Profile Toggle Section -->
+<section class="mb-lg flex justify-center">
+<div class="inline-flex p-1 bg-surface-container rounded-full border border-outline-variant/30">
+<button class="px-md py-2 rounded-full text-label-sm font-label-sm transition-all duration-300 bg-primary text-white shadow-sm" id="toggle-feminine" onclick="setStyleProfile('feminine')">
+                    FEMININE
+                </button>
+<button class="px-md py-2 rounded-full text-label-sm font-label-sm transition-all duration-300 text-secondary hover:text-primary" id="toggle-masculine" onclick="setStyleProfile('masculine')">
+                    MASCULINE
+                </button>
+</div>
+</section>
+<!-- Welcome & Weather Section -->
+<section class="mb-lg">
+<div class="flex justify-between items-end mb-sm">
+<div>
+<p class="text-label-md font-label-md text-secondary uppercase tracking-widest mb-xs">Morning, Julian</p>
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface" id="suggestion-title">Today's Suggestion</h2>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined">wb_sunny</span>
+<span class="text-headline-sm font-headline-sm">22°C</span>
+</div>
+<p class="text-label-sm font-label-sm text-secondary uppercase">Sunny &amp; Dry</p>
+</div>
+</div>
+</section>
+<!-- Featured Outfit Card -->
+<section class="mb-xl">
+<div class="relative group cursor-pointer overflow-hidden rounded-xl soft-shadow bg-surface-container-lowest transition-all duration-500">
+<div class="aspect-[3/4] md:aspect-[16/9] w-full relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Feminine: Sage green wool coat layered over a cream silk slip dress. Masculine: Charcoal tailored overcoat over a navy merino knit and slate trousers." id="outfit-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvoLTXmpSaSPYQ0x-HmBW70WTctf8izoL7idVZiXzea97CvkpT9a-2lcvqhqx3WE_743UHLv4XEI5OL2IZ3RxUsBF-GMEvCCdn7B3OKdh2QKM7-xZ0qtjLKj3QzCanS5_enbuG3zMZ247X6Km5FpPklimOkBPu3jU5yrSSpxZJrhIUx-2jvI-mUBtXyr_ssMRfcdKiuPgeqsCKavlHiQL8NXwGTgU1uLqTxVRXwxAQxOnr3B8WExncKXM5XFlRhf_uEqBy-6NdInQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-md left-md right-md">
+<span class="inline-block px-sm py-xs bg-primary/90 text-white text-label-sm font-label-sm rounded-lg backdrop-blur-md mb-base">EDITOR'S PICK</span>
+<h3 class="text-headline-md font-headline-md text-white drop-shadow-sm" id="outfit-title">The Minimalist Transition</h3>
+</div>
+</div>
+<div class="p-md bg-surface-container-lowest border-t border-surface-variant/20 transition-all duration-500">
+<div class="flex flex-wrap gap-xs mb-md" id="outfit-tags">
+<span class="px-sm py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded">Sage Wool</span>
+<span class="px-sm py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded">Silk Layer</span>
+<span class="px-sm py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded">Gold Accents</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-body-md font-body-md text-secondary italic">Perfect for a 22°C day with moderate breeze.</p>
+<button class="flex items-center gap-xs text-primary font-semibold hover:gap-base transition-all">
+<span class="text-label-md font-label-md">WEAR THIS</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Events Section -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Upcoming Events</h2>
+<button class="text-label-md font-label-md text-primary underline underline-offset-4">View Calendar</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Event Card 1 -->
+<div class="flex items-center p-md bg-surface-container-lowest rounded-xl soft-shadow border border-transparent hover:border-primary/20 transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center mr-md">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+</div>
+<div class="flex-grow">
+<h4 class="text-body-lg font-bold text-on-surface">Dinner at Le Plaisir</h4>
+<p class="text-label-md font-label-md text-secondary uppercase tracking-tighter">Today, 7:00 PM</p>
+</div>
+<button class="px-md py-base bg-primary text-white text-label-sm font-label-sm rounded-lg scale-hover shadow-sm">PLAN OUTFIT</button>
+</div>
+<!-- Event Card 2 -->
+<div class="flex items-center p-md bg-surface-container-lowest rounded-xl soft-shadow border border-transparent hover:border-primary/20 transition-all">
+<div class="w-12 h-12 rounded-full bg-secondary-container/30 flex items-center justify-center mr-md">
+<span class="material-symbols-outlined text-secondary">business_center</span>
+</div>
+<div class="flex-grow">
+<h4 class="text-body-lg font-bold text-on-surface">Client Presentation</h4>
+<p class="text-label-md font-label-md text-secondary uppercase tracking-tighter">Tomorrow, 10:30 AM</p>
+</div>
+<button class="px-md py-base border border-outline/30 text-secondary text-label-sm font-label-sm rounded-lg scale-hover">PLAN OUTFIT</button>
+</div>
+</div>
+</section>
+<!-- Wardrobe Slots -->
+<section class="mt-xl">
+<h3 class="text-label-md font-label-md text-secondary uppercase tracking-widest mb-md">Recent Additions</h3>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-sm">
+<div class="aspect-square border border-dashed border-outline-variant flex items-center justify-center rounded group cursor-pointer hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">add</span>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden shadow-sm">
+<div class="w-full h-full bg-cover bg-center" id="addition-1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_jLQDI5jBVA7zwQ3uGpVXHXxoZu2FPTlGkswwJU0eys9ZL5iprhLLWDFGmqdanvLSI8CWT_FRvwKzHbNxe6uYqjIbvSaojQzrIetU9hl14AHo7NDMjECLwYhaOG5oTZqXopQgPsxs-SQn5Ia-FCrBil3wUgKCxwSpOiH0CIDEJ45VlQAbOLdX_MUbcYtgkK1mHR3G4oFh4D-cqoq9Teke7gWbjZIdf_gV3OqRi7w0y7hs5hf2-Txw11he27sB4Pio4QkA4vFjrB8')"></div>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden shadow-sm">
+<div class="w-full h-full bg-cover bg-center" id="addition-2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPHYp5Q_d8nYyTygGw7sfeg1ht3RX76rcSzxjBa7WLR7KyzaO-k8MWTMT6bEpFp1iTXh1ZrR6cp3XtLVtw5lh-r31erD5hhx6TpOm0l19s04wup0pL9QCZT-xM6cR5X4DDQmpC9ks79N-MTdmsa_Ms_TIokIoKmQC0p_MH_spSEAvVxsukM-GXvcR0Bga790NcwdIvNNx_5o5QjWCZK6tuDNZoLZJRoqigO8ZuyYSVc8KgiTn2mKpnnPtjnxj_9owmdxrKXAhrETE')"></div>
+</div>
+<div class="aspect-square border border-dashed border-outline-variant flex items-center justify-center rounded"></div>
+<div class="aspect-square border border-dashed border-outline-variant flex items-center justify-center rounded"></div>
+<div class="aspect-square border border-dashed border-outline-variant flex items-center justify-center rounded"></div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container-lowest flex justify-around items-center px-4 py-3 pb-safe shadow-sm rounded-t-full backdrop-blur-nav transition-all duration-300">
+<a class="flex flex-col items-center justify-center bg-primary-container/20 text-primary rounded-full px-4 py-1 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-variant/10 transition-all rounded-full px-4 py-1 active:scale-95" href="#">
+<span class="material-symbols-outlined">checkroom</span>
+<span class="text-label-sm font-label-sm">Closet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-variant/10 transition-all rounded-full px-4 py-1 active:scale-95" href="#">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span class="text-label-sm font-label-sm">Outfits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary hover:bg-surface-variant/10 transition-all rounded-full px-4 py-1 active:scale-95" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        function setStyleProfile(profile) {
+            const html = document.documentElement;
+            const btnFem = document.getElementById('toggle-feminine');
+            const btnMasc = document.getElementById('toggle-masculine');
+            const outfitImg = document.getElementById('outfit-image');
+            const outfitTitle = document.getElementById('outfit-title');
+            const outfitTags = document.getElementById('outfit-tags');
+
+            if (profile === 'masculine') {
+                html.classList.add('dark');
+                btnMasc.className = 'px-md py-2 rounded-full text-label-sm font-label-sm transition-all duration-300 bg-primary text-white shadow-sm';
+                btnFem.className = 'px-md py-2 rounded-full text-label-sm font-label-sm transition-all duration-300 text-secondary hover:text-primary';
+                
+                // Update content for Masculine profile
+                outfitTitle.textContent = "The Modern Professional";
+                outfitImg.style.backgroundImage = "url('https://images.unsplash.com/photo-1594932224828-b4b059b6f6f9?q=80&w=2080&auto=format&fit=crop')";
+                outfitTags.innerHTML = `
+                    <span class="px-sm py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded">Slate Wool</span>
+                    <span class="px-sm py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded">Merino Knit</span>
+                    <span class="px-sm py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded">Oxford Shoe</span>
+                `;
+            } else {
+                html.classList.remove('dark');
+                btnFem.className = 'px-md py-2 rounded-full text-label-sm font-label-sm transition-all duration-300 bg-primary text-white shadow-sm';
+                btnMasc.className = 'px-md py-2 rounded-full text-label-sm font-label-sm transition-all duration-300 text-secondary hover:text-primary';
+                
+                // Reset to Feminine defaults
+                outfitTitle.textContent = "The Minimalist Transition";
+                outfitImg.style.backgroundImage = "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvoLTXmpSaSPYQ0x-HmBW70WTctf8izoL7idVZiXzea97CvkpT9a-2lcvqhqx3WE_743UHLv4XEI5OL2IZ3RxUsBF-GMEvCCdn7B3OKdh2QKM7-xZ0qtjLKj3QzCanS5_enbuG3zMZ247X6Km5FpPklimOkBPu3jU5yrSSpxZJrhIUx-2jvI-mUBtXyr_ssMRfcdKiuPgeqsCKavlHiQL8NXwGTgU1uLqTxVRXwxAQxOnr3B8WExncKXM5XFlRhf_uEqBy-6NdInQ')";
+                outfitTags.innerHTML = `
+                    <span class="px-sm py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded">Sage Wool</span>
+                    <span class="px-sm py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded">Silk Layer</span>
+                    <span class="px-sm py-1 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm rounded">Gold Accents</span>
+                `;
+            }
+        }
+
+        // Micro-interactions for scrolling
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                header.style.transform = 'translateY(0)';
+                header.classList.remove('shadow-sm');
+                return;
+            }
+            if (currentScroll > lastScroll) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+                header.classList.add('shadow-sm', 'backdrop-blur-md');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

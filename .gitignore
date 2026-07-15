@@ -1,0 +1,30 @@
+node_modules/
+dist/
+dist-ssr/
+.DS_Store
+*.local
+
+# Env — keep .env.example committed, never real secrets
+.env
+.env.*
+!.env.example
+
+# Vite / PWA build output
+dev-dist/
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# TWA / Android build artifacts
+twa/app-release-*.aab
+twa/app-release-*.apk
+twa/*.keystore
+twa/android.keystore
+twa/.gradle/
+twa/app/
+twa/build/
+
+# Editor
+.vscode/
+.idea/

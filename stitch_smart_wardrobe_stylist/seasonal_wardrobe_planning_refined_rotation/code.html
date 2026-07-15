@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELÉVATION | Seasonal Wardrobe Planning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#d1e8dd",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#65635a",
+                        "on-background": "#1c1b1a",
+                        "surface-container-highest": "#e6e2de",
+                        "on-secondary-fixed": "#1d1c15",
+                        "tertiary": "#5e5e5b",
+                        "on-primary-container": "#263932",
+                        "surface-container-high": "#ebe7e4",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "tertiary-fixed": "#e4e2dd",
+                        "primary": "#4e635a",
+                        "primary-fixed-dim": "#b5ccc1",
+                        "on-surface": "#1c1b1a",
+                        "secondary-fixed": "#e7e2d8",
+                        "surface-container": "#f1edea",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "background": "#fdf9f5",
+                        "inverse-on-surface": "#f4f0ec",
+                        "surface-variant": "#e6e2de",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b5ccc1",
+                        "surface-tint": "#4e635a",
+                        "secondary-fixed-dim": "#cac6bc",
+                        "on-tertiary-container": "#353632",
+                        "surface": "#fdf9f5",
+                        "surface-container-low": "#f7f3ef",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fdf9f5",
+                        "on-primary-fixed-variant": "#374b43",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#31302e",
+                        "on-primary-fixed": "#0b1f18",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#9f9e9a",
+                        "surface-dim": "#ddd9d6",
+                        "on-secondary-fixed-variant": "#49473f",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "secondary-container": "#e4dfd5",
+                        "on-surface-variant": "#424845",
+                        "secondary": "#615e56",
+                        "outline-variant": "#c2c8c4",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#8da399",
+                        "outline": "#727875"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "lg": "48px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                        "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-sm": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .transition-section {
+            background: linear-gradient(180deg, rgba(249, 247, 242, 1) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity">menu</span>
+</div>
+<div class="flex items-center gap-2">
+<img alt="Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLv0xGyen6AfsPZJH2sjhE6jXVeM94fGV9PCoAuTLMM2Wxm9zoyxD5IYpxlreXgPgja4VFfanj0N83kucpqvL4UyxakeUfZkF61rygd_zrr3Db5gNWYACTModeFv0Oz0S2Uj5oq4r0Xdp2KN3fJ9swFl7bd3ud7bo2SZ25_Aimud86VpnjGnedpGJ8mTyrI0oFm4cFhgXt2JTADGbiWLka7iW5CNXptdghiQvq3JWvnPBR7Buxtdt_7x_-4"/>
+<span class="font-headline-md text-headline-md text-primary tracking-tight">ELÉVATION</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity">account_circle</span>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Seasonal Transition Header -->
+<section class="transition-section px-margin-mobile md:px-margin-desktop pt-lg pb-md">
+<div class="max-w-4xl mx-auto text-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-4 block">Current Transition</span>
+<h1 class="font-headline-lg text-headline-lg md:text-headline-lg mb-6 text-on-surface">Winter to Spring</h1>
+<div class="w-12 h-px bg-outline-variant mx-auto mb-8"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic leading-relaxed">
+                    "The shift from heavy textures to light, breathable layers marks a renewal of style. This season, focus on fluidity—mixing structured wools with silk georgette and soft linens. It is a time for quiet elevation."
+                </p>
+<div class="mt-8 flex justify-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-3 font-label-md text-label-md rounded-lg hover:opacity-90 transition-all flex items-center gap-2">
+<span>Begin Migration</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Capsule Curation -->
+<section class="mt-xl">
+<div class="px-margin-mobile md:px-margin-desktop flex justify-between items-end mb-base">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Curated Capsules</h2>
+<p class="font-label-md text-label-md text-secondary mt-1">Foundational edits for the new season.</p>
+</div>
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-1 hover:underline">
+                    View All <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<div class="flex gap-md overflow-x-auto px-margin-mobile md:px-margin-desktop py-md hide-scrollbar">
+<!-- Capsule Card 1 -->
+<div class="flex-shrink-0 w-72 md:w-80 group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden rounded-lg mb-4 relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A moody, high-end fashion photography shot of a minimalist closet area. A single charcoal gray tailored blazer hangs on a wooden hanger against a soft cream-colored wall. Soft side lighting highlights the wool texture and the elegant silhouette of the garment, reflecting a luxury boutique aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBN8AXs6UtFxVDh98NsgTdA0jxLucqvM5ElNiAiAxYzmlFIwoaAWLDEsFfNniUlzQGXYI1VlEvmOP5MZmUAd2NTdz2gD7ihGzT0twDYuuGYr5yRqpc75sPbk_poG8vtGhBT5AMVym6Wd4LaEneGtTK9WJt1uNxbTUjBvVL8IFtx-nUZu2ZCwFcBI2shAUGBmbGcG4N3MvTAU3-Opcv0pJS1OBhOQxkxW5KrwGZz7vGqrE1b_-l0rioniVtr0yqPXdRAG05LS6pbnHA')"></div>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-1">The Modern Uniform</h3>
+<p class="font-label-sm text-label-sm text-secondary uppercase">12 Items • Foundation</p>
+</div>
+<!-- Capsule Card 2 -->
+<div class="flex-shrink-0 w-72 md:w-80 group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden rounded-lg mb-4 relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A detailed flat-lay of transitional clothing items on a pale oak surface. Includes a lightweight beige trench coat, a white silk scarf, and tortoise shell sunglasses. The lighting is bright and airy, reminiscent of a spring morning. The color palette is strictly neutral with tobacco, cream, and soft sage accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUPdUpJT03zx8pDbnarQaxFWcUVx4fkTX-si5w9jNnpVZy186KNHLllNer6hK7nIp4HMwbOcz1eslsnNoUk9MyfD3xqNI0En_dggdy09Gwr_cYcb2aMAI4UwA4Xbo5RInEjsUihhKmlIQQODgGAn0HHW4WLO43Vce8zcr3F2bcB5x6-EOBfxah4nVYsgPVu8v1jefiMJ-Cp8TF2eEPQiVMIlJnQIhEmcxvrAdnVEWadXRbZgy4DDzRMjNOrQaoUH6t0a7nucCRJE4')"></div>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-1">Transitional Layers</h3>
+<p class="font-label-sm text-label-sm text-secondary uppercase">8 Items • Seasonal</p>
+</div>
+<!-- Capsule Card 3 -->
+<div class="flex-shrink-0 w-72 md:w-80 group cursor-pointer">
+<div class="aspect-[3/4] bg-surface-container overflow-hidden rounded-lg mb-4 relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="An artistic composition of light fabrics and linen textures draped elegantly. The scene is set in a sun-drenched villa terrace with soft shadows. The lighting is golden-hour warm, highlighting the tobacco and sage tones of the materials. The overall mood is sophisticated, relaxed, and reminiscent of a luxury getaway." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCML1ZEbkZ3Q_ZoHP7NlZqm-CmfE0mbZvw0IpJXAVDxjHPXydLWjdHsWOGC6QnSNpdWFx5Lo8v4gHQIL8VRn5WoBKrU_27UkoNGDYK4vC0BDqwNcSfVOKgUKTKM8EZDZagqKbOZYCU3ebMeE3tqVKycRg0haB-eBnfiHWCF2XT1MwMJ0ypvF-UE4-Gh6WWYnBDD78yqo_w7novl0xz2MKaYmKTOWFUF1LzsyGUHdeJAFhEpZiseBmicxEpDB8aF5ur2Vag4L5rzneA')"></div>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-1">Weekend in Provence</h3>
+<p class="font-label-sm text-label-sm text-secondary uppercase">15 Items • Occasion</p>
+</div>
+<!-- Create New Slot -->
+<div class="flex-shrink-0 w-72 md:w-80 border-2 border-dashed border-outline-variant rounded-lg flex flex-col items-center justify-center group hover:border-primary transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</div>
+<span class="mt-4 font-label-md text-label-md text-secondary group-hover:text-primary">Create New Capsule</span>
+</div>
+</div>
+</section>
+<!-- Active Storage Management -->
+<section class="mt-xl px-margin-mobile md:px-margin-desktop">
+<div class="bg-surface-container rounded-xl p-md md:p-lg">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-lg">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Rotation Strategy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your physical wardrobe space efficiently.</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-lg">
+<button class="px-6 py-2 rounded-md bg-white shadow-sm font-label-md text-label-md text-primary border-primary border-2">In Rotation</button>
+<button class="px-6 py-2 rounded-md font-label-md text-label-md text-secondary hover:text-on-surface transition-colors">In Archive</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Rotation Item 1 -->
+<div class="bg-white p-sm rounded-lg shadow-sm group"><div class="aspect-square bg-surface-container-low mb-3 overflow-hidden rounded">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAszPC-hoY7Plm6AC23v162Y_F7jvYdjQ4mQIKR2Hsnv3dtab08F75bjqB5tJ9BtCPIOO4chCVd-SvjgpZR9XJDDIV2uEhgPuN9XOgI5jp083poyAAKs31IbLiyWhRnfX4-xGqA8IeMkuaxoICct9VGubNGNTV3aEfzU_70lQQg-gKxc5OHZzdxaPYbGnZ7wjxzHsKHOrf5XUfOGFmNjtJIPpLV4aBIT83Sa7MptziZVad9s-xli-5LkHi1JwF8g7_JVbUfxaEr_x4')"></div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Cashmere Crew</p>
+<p class="font-label-sm text-[10px] text-primary uppercase font-bold">Worn 12x this season</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px] cursor-pointer">info</span>
+</div>
+<button class="w-full py-2 border border-outline-variant rounded font-label-sm text-[10px] uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors">
+Archive for Summer
+</button></div>
+<!-- Rotation Item 2 -->
+<div class="bg-white p-sm rounded-lg shadow-sm group"><div class="aspect-square bg-surface-container-low mb-3 overflow-hidden rounded">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6w5DAKXmGBwNX4BcP3eSKwhqmj9G8ZyKZGXfjMVG-QSkhuoCaKABfTnVrhedYztwIXBiymm35o06R9UQHCYFKJJRJBzlJtqYoYSEeXYy3KeeEZH9w9cqRGWKnvex-vx1TK5lBoS62YIZ_yHsoOXluC38e6-adG46liYQIfx5xmGkYI18lRuL2M3Cd--Drzmh6VxTqwI14bqk32P1hpEOQ6oBHVb_eiz9drldj4Y-Yhh5cZX5NwXxMUq2-WHgbHjJbDHd7jGpCAok')"></div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Tailored Wool</p>
+<p class="font-label-sm text-[10px] text-outline uppercase">Last worn: 2 days ago</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px] cursor-pointer">info</span>
+</div>
+<button class="w-full py-2 border border-outline-variant rounded font-label-sm text-[10px] uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors">
+Archive for Summer
+</button></div>
+<!-- Wardrobe Slot Component -->
+<div class="bg-white/50 p-sm rounded-lg shadow-sm group opacity-80 hover:opacity-100 transition-opacity">
+<div class="aspect-square bg-surface-container-low mb-3 overflow-hidden rounded relative">
+<div class="absolute top-2 left-2 bg-surface-container-highest/90 px-2 py-1 rounded text-[9px] font-label-sm uppercase tracking-tighter">Cedar Chest</div>
+<div class="w-full h-full bg-cover bg-center grayscale-[50%]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUPdUpJT03zx8pDbnarQaxFWcUVx4fkTX-si5w9jNnpVZy186KNHLllNer6hK7nIp4HMwbOcz1eslsnNoUk9MyfD3xqNI0En_dggdy09Gwr_cYcb2aMAI4UwA4Xbo5RInEjsUihhKmlIQQODgGAn0HHW4WLO43Vce8zcr3F2bcB5x6-EOBfxah4nVYsgPVu8v1jefiMJ-Cp8TF2eEPQiVMIlJnQIhEmcxvrAdnVEWadXRbZgy4DDzRMjNOrQaoUH6t0a7nucCRJE4')"></div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="font-label-sm text-label-sm text-secondary">Linen Blazer</p>
+<p class="font-label-sm text-[10px] text-outline uppercase">Archived</p>
+</div>
+</div>
+<button class="w-full py-2 bg-primary text-on-primary rounded font-label-sm text-[10px] uppercase tracking-widest hover:opacity-90 transition-all">
+Rotate In
+</button>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-lg flex flex-col items-center justify-center aspect-square cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary">add</span>
+<span class="mt-2 font-label-sm text-label-sm text-secondary">Add Item</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Wardrobe Gap Analysis -->
+<section class="mt-xl px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-base">Style Insights</h2>
+<div class="grid md:grid-cols-2 gap-md">
+<div class="bg-primary p-md rounded-xl text-on-primary flex items-center gap-6 group cursor-pointer transition-transform duration-300 hover:scale-[1.01]">
+<div class="w-24 h-24 flex-shrink-0 bg-white/10 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" data-alt="High-fashion product shot of a sage green lightweight silk trench coat draped on an invisible mannequin. The fabric flows elegantly, suggesting movement. The lighting is high-key and professional, highlighting the luxury finish of the garment against a minimalist tobacco background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzeMYs0yVFkW2oFq6Hm08KTFt8uFES28J6FAF-G718eWX393DTV-pasG5EGTKPf7fhLj5WZOcKwEvsP9yOjm5EKkoc23imR18aMldPFFSwuSoo8GOJBeeeC0hgRVQipjvC0hM6ogYRkEsUNThAcKXt_hEQlzo3hW5S_GuJEqvXqU_i2tDpPzayQCe0PNLeIhqkq8VtTXGBM8MWRYkUSc5RuBIEepppGSaXJzscxJNxQC9OAj9jL-AlI02yZ55WSGg0CrgqQWCS7y8')"></div>
+</div>
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest mb-1">Recommendation</p>
+<h4 class="font-headline-sm text-headline-sm leading-tight mb-2">A lightweight trench would complete your Spring capsule.</h4>
+<p class="text-[13px] opacity-80 font-body-md">Our analysis shows a gap in your outerwear for 10°C - 18°C weather.</p>
+</div>
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+<div class="bg-secondary-container p-md rounded-xl text-on-secondary-container flex items-center gap-6 group cursor-pointer transition-transform duration-300 hover:scale-[1.01]">
+<div class="w-24 h-24 flex-shrink-0 bg-white/50 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Luxury accessories arrangement featuring a tan leather belt and dark brown loafers on a light linen cloth. The setup is minimalist and focuses on the high-quality textures of the tobacco leather. Soft morning light creates a warm and inviting atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2gsIOI5_zWAgamodwGv87wRdvWFAIHdne1bwWZ5RU0Plpmq-DPE-I9hcQCfpruj8ZFuVma-qVajlAEfS2CdbDnf-dTAL4-7CHG50LJfUsKUEjNuikvQ4V64d2dTb5avjgLCCVKHhlCpYEyYf8HWMuGKXA6W9m-NnphtV62u-geCcZTPyoJNwuA_3wvZyg3KKsZB0M6rPofSOkwwd1fERMeflDKurXnnZ9iFS4X7JC-q2JprUKEfQEinPkPZaRRRHYDL-PcnzBKE8')"></div>
+</div>
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant uppercase tracking-widest mb-1">Color Palette</p>
+<h4 class="font-headline-sm text-headline-sm leading-tight mb-2">Incorporate more Tobacco tones this season.</h4>
+<p class="text-[13px] opacity-80 font-body-md">Complement your Sage base with warm leather accessories.</p>
+</div>
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface/90 backdrop-blur-lg">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">checkroom</span>
+<span class="font-label-sm text-label-sm mt-1">Closet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold transition-transform duration-200 scale-105" href="#">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span class="font-label-sm text-label-sm mt-1">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">person_search</span>
+<span class="font-label-sm text-label-sm mt-1">Style</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-label-sm text-label-sm mt-1">Shop</span>
+</a>
+</nav>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-4px)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Toggle state logic (simplified visual)
+        const toggleButtons = document.querySelectorAll('.bg-surface-container-low button');
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                toggleButtons.forEach(b => {
+                    b.classList.remove('bg-white', 'shadow-sm', 'text-primary');
+                    b.classList.add('text-secondary');
+                });
+                btn.classList.add('bg-white', 'shadow-sm', 'text-primary');
+                btn.classList.remove('text-secondary');
+            });
+        });
+    </script>
+</body></html>

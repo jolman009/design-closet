@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Design Closet">
+  <!-- Maskable variant: full-bleed sage background so Android can crop to any shape. -->
+  <!-- Logo mark kept inside the central 80% "safe zone" per the maskable spec. -->
+  <rect width="512" height="512" fill="#4e635a"/>
+  <g transform="translate(256 256) scale(0.68) translate(-256 -256)">
+    <!-- The W in cream -->
+    <g fill="none" stroke="#f4f0ec" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M118 148 L196 372 L256 252 L316 372 L394 148" stroke-width="34"/>
+    </g>
+    <!-- Hanger in sage, reading as carved negative space -->
+    <g fill="none" stroke="#4e635a" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M256 196 C256 172 238 166 238 150 C238 138 248 130 258 132" stroke-width="11"/>
+      <path d="M256 198 L196 250 L316 250 Z" stroke-width="12" fill="none"/>
+      <path d="M196 250 L316 250" stroke-width="12"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELÉVATION - Style Profile</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f4f1ee",
+                    "surface-dim": "#d9d5d1",
+                    "secondary-fixed": "#e0dbd6",
+                    "on-surface-variant": "#4a5553",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#2d2d2d",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2d2d2d",
+                    "tertiary-fixed": "#e9e3de",
+                    "outline": "#7b8381",
+                    "surface-tint": "#4a5553",
+                    "on-primary-container": "#f4f1ee",
+                    "secondary-container": "#e0dbd6",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary": "#8d775f",
+                    "on-secondary-fixed-variant": "#2d2d2d",
+                    "surface-container-high": "#e9e3de",
+                    "surface-variant": "#d9d5d1",
+                    "primary-container": "#4a5553",
+                    "surface-container-low": "#f9f7f5",
+                    "on-primary-fixed-variant": "#4a5553",
+                    "tertiary-fixed-dim": "#cec7c1",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "background": "#f4f1ee",
+                    "on-surface": "#2d2d2d",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c4c8c7",
+                    "primary-fixed-dim": "#8da19d",
+                    "on-primary-fixed": "#0b1f1c",
+                    "inverse-on-surface": "#f4f1ee",
+                    "on-secondary-fixed": "#2d2d2d",
+                    "inverse-primary": "#8da19d",
+                    "on-tertiary-container": "#353632",
+                    "primary-fixed": "#c4d1ce",
+                    "secondary-fixed-dim": "#b5ada6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#8d775f",
+                    "tertiary-container": "#c9b8a9",
+                    "surface": "#f4f1ee",
+                    "on-tertiary-fixed-variant": "#2d2d2d",
+                    "surface-bright": "#ffffff",
+                    "on-background": "#2d2d2d",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e0dbd6",
+                    "primary": "#2d2d2d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "lg": "48px",
+                    "xs": "4px",
+                    "gutter": "16px",
+                    "xl": "80px",
+                    "md": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-sm": ["22px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32 overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center w-full px-margin-mobile h-16 bg-background/80 backdrop-blur-md border-b border-outline/10">
+<button class="flex items-center justify-center w-10 h-10 hover:bg-primary/5 transition-colors duration-300">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md tracking-[0.2em] text-on-surface uppercase">ELÉVATION</h1>
+<button class="flex items-center justify-center w-10 h-10 hover:bg-primary/5 transition-colors duration-300">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+</button>
+</header>
+<main class="mt-16 max-w-2xl mx-auto px-margin-mobile">
+<!-- Aesthetic Toggle -->
+<div class="mt-md mb-lg">
+<div class="bg-surface-container-high p-1 rounded-full flex items-center">
+<button class="flex-1 py-3 text-label-md font-label-md text-on-surface bg-surface-bright rounded-full shadow-sm transition-all duration-300" id="toggle-masculine">Masculine</button>
+<button class="flex-1 py-3 text-label-md font-label-md text-on-surface-variant transition-all duration-300" id="toggle-feminine">Feminine</button>
+</div>
+</div>
+<!-- Profile Header -->
+<section class="flex flex-col items-center mb-xl">
+<div class="relative mb-md">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest overflow-hidden shadow-md p-0.5">
+<img class="w-full h-full object-cover rounded-full" data-alt="Julian portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACc9JdRYY0tcvFrA9rHnIYeyV9Ms6hQt5bypqJIBjUzc5lIw8NMj7RpcE-h1S6LFmIX2CWW2lwqNR7gTzOINkhqPjCUODP9i0mL1F9FLu2TmfFoAdE1-220tC8f8fp3dO5bMuEoRRxgiUopxs37u9UxzxxUQkrAHCKnsZDFXTV-xMr67URcXD5q4AkcZHu32W7JJiDMOGrZKqt4s47ziD7_RV7YX_yMf8h1CkaVaNb9iRc2hPzA0sm_wkuKWJRwGFJesysN5L9b-o"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center shadow-lg border-2 border-background">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Julian</h2>
+<p class="text-label-md font-label-md text-secondary mt-xs uppercase tracking-[0.15em]">Paris, FR</p>
+</section>
+<!-- Style Persona -->
+<section class="mb-xl">
+<div class="flex justify-between items-end mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Style Persona</h3>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase cursor-pointer hover:underline">Refine</span>
+</div>
+<div class="bg-surface-bright p-md border border-outline/10 shadow-[0_4px_12px_rgba(45,45,45,0.05)]">
+<p class="text-body-md text-on-surface leading-relaxed italic">
+                    "A curated blend of modern minimalism and classic tailoring. You prioritize structure, quality fabrics, and a timeless silhouette over fleeting trends."
+                </p>
+<div class="mt-md flex flex-wrap gap-base">
+<span class="px-3 py-1 bg-surface-container-high text-label-sm font-label-sm text-on-surface-variant">Architectural</span>
+<span class="px-3 py-1 bg-surface-container-high text-label-sm font-label-sm text-on-surface-variant">Monochrome</span>
+<span class="px-3 py-1 bg-surface-container-high text-label-sm font-label-sm text-on-surface-variant">Effortless</span>
+</div>
+</div>
+</section>
+<!-- Preferred Palette -->
+<section class="mb-xl">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Preferred Palette</h3>
+<div class="flex gap-gutter overflow-x-auto hide-scrollbar pb-base">
+<div class="flex-shrink-0 flex flex-col items-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-[#4a5553] shadow-inner border border-black/5"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Deep Slate</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-[#f4f1ee] shadow-inner border border-black/10"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Crisp Ecru</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-[#2d2d2d] shadow-inner border border-black/5"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Charcoal</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-xs">
+<div class="w-16 h-16 rounded-full bg-[#8d775f] shadow-inner border border-black/5"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Tobacco</span>
+</div>
+<div class="flex-shrink-0 flex flex-col items-center gap-xs">
+<div class="w-16 h-16 rounded-full border border-dashed border-outline flex items-center justify-center bg-surface-container-low">
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Add</span>
+</div>
+</div>
+</section>
+<!-- Sizes -->
+<section class="mb-xl">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Standard Sizes</h3>
+<div class="grid grid-cols-3 gap-gutter">
+<div class="bg-surface-bright p-md border border-outline/5 text-center shadow-sm">
+<p class="text-label-sm font-label-sm text-secondary uppercase mb-xs">Tops</p>
+<p class="font-headline-sm text-on-surface">Medium</p>
+</div>
+<div class="bg-surface-bright p-md border border-outline/5 text-center shadow-sm">
+<p class="text-label-sm font-label-sm text-secondary uppercase mb-xs">Bottoms</p>
+<p class="font-headline-sm text-on-surface">32/30</p>
+</div>
+<div class="bg-surface-bright p-md border border-outline/5 text-center shadow-sm">
+<p class="text-label-sm font-label-sm text-secondary uppercase mb-xs">Shoes</p>
+<p class="font-headline-sm text-on-surface">43 EU</p>
+</div>
+</div>
+</section>
+<!-- Style Goals -->
+<section class="mb-xl">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Style Goals</h3>
+<button class="text-on-surface hover:bg-on-surface/5 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-md p-md bg-surface-bright border-l-4 border-primary shadow-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex-1">
+<p class="text-body-md font-medium text-on-surface">Perfect White Tee</p>
+<p class="text-label-sm text-on-surface-variant">Looking for heavy-weight cotton</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-md bg-surface-bright border-l-4 border-outline/20 shadow-sm">
+<span class="material-symbols-outlined text-outline/30">radio_button_unchecked</span>
+<div class="flex-1">
+<p class="text-body-md font-medium text-on-surface">Oversized Blazer</p>
+<p class="text-label-sm text-on-surface-variant">Searching for a navy wool-blend</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-md bg-surface-bright border-l-4 border-outline/20 shadow-sm">
+<span class="material-symbols-outlined text-outline/30">radio_button_unchecked</span>
+<div class="flex-1">
+<p class="text-body-md font-medium text-on-surface">Leather Chelsea Boots</p>
+<p class="text-label-sm text-on-surface-variant">Matte finish preferred</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-bright border-t border-outline/5">
+<a class="flex flex-col items-center justify-center text-on-surface/40 hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface/40 hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined">checkroom</span>
+<span class="text-label-sm font-label-sm">Closet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface/40 hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span class="text-label-sm font-label-sm">Outfits</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface px-4 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+<div class="w-1 h-1 bg-primary rounded-full mt-0.5"></div>
+</a>
+</nav>
+<script>
+        const mascBtn = document.getElementById('toggle-masculine');
+        const femBtn = document.getElementById('toggle-feminine');
+
+        mascBtn.addEventListener('click', () => {
+            mascBtn.classList.add('bg-surface-bright', 'shadow-sm', 'text-on-surface');
+            mascBtn.classList.remove('text-on-surface-variant');
+            femBtn.classList.remove('bg-surface-bright', 'shadow-sm', 'text-on-surface');
+            femBtn.classList.add('text-on-surface-variant');
+        });
+
+        femBtn.addEventListener('click', () => {
+            femBtn.classList.add('bg-surface-bright', 'shadow-sm', 'text-on-surface');
+            femBtn.classList.remove('text-on-surface-variant');
+            mascBtn.classList.remove('bg-surface-bright', 'shadow-sm', 'text-on-surface');
+            mascBtn.classList.add('text-on-surface-variant');
+        });
+
+        // Add subtle interaction effect to sections
+        document.querySelectorAll('section').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.style.transform = 'translateY(-2px)';
+                el.style.transition = 'transform 0.3s ease';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

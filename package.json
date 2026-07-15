@@ -1,0 +1,25 @@
+{
+  "name": "design-closet",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Design Closet — a production PWA that suggests daily outfits from your own wardrobe.",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run icons && vite build",
+    "preview": "vite preview --host",
+    "icons": "node scripts/generate-icons.mjs",
+    "serve": "vite preview --port 4173 --host",
+    "twa:init": "bubblewrap init --manifest https://YOUR_DOMAIN/manifest.webmanifest",
+    "twa:build": "bubblewrap build",
+    "deploy": "npm run build && firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "vite": "^5.4.8",
+    "vite-plugin-pwa": "^0.20.5"
+  }
+}
