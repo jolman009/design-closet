@@ -2,7 +2,7 @@
 // favorites, outfit save/delete, event creation, profile editing, goals.
 import { S, CAT_LABEL, CAT_ICON, COLOR_HEX, OCCASIONS } from './state.js'
 import { $, esc, toast, thumbHTML, theme } from './ui.js'
-import { db, uploadPhoto } from './supabase.js'
+import { db, uploadPhoto, tagGarment } from './supabase.js'
 import { generateOutfit, itemsOf } from './engine.js'
 import { render } from './render.js'
 import { wornLabel } from './wear.js'
@@ -173,7 +173,7 @@ export function openItemForm(item) {
       )
       .join('')}</div>
     <div class="tog-row">
-      <div><div class="tt">Automatic Tagging</div><div class="ts">Let the app read colors from your photo</div></div>
+      <div><div class="tt">Smart Tagging ✨</div><div class="ts">AI reads category, colors, fabric &amp; more from your photo</div></div>
       <button class="switch on" id="f-auto" onclick="this.classList.toggle('on')"></button>
     </div>
     <button class="btn btn-p btn-block" style="margin-top:26px" id="f-save" onclick="saveItem('${i.id || ''}')">Save to Closet</button>
@@ -198,7 +198,7 @@ export function photoChosen(input) {
       (b) => {
         pendingPhoto = { blob: b, dataUrl: cv.toDataURL('image/jpeg', 0.75) }
         $('#cap').innerHTML = `<img src="${pendingPhoto.dataUrl}">`
-        if ($('#f-auto').classList.contains('on')) autoTag(cx, cv)
+        if ($('#f-auto').classList.contains('on')) aiAutoTag(cx, cv)
       },
       'image/jpeg',
       0.85,
@@ -206,6 +206,57 @@ export function photoChosen(input) {
     URL.revokeObjectURL(img.src)
   }
   img.src = URL.createObjectURL(f)
+}
+
+// Show a busy overlay on the capture area while the vision model runs.
+function setCapBusy(on) {
+  const cap = $('#cap')
+  if (!cap) return
+  let o = cap.querySelector('.cap-busy')
+  if (on && !o) {
+    o = document.createElement('div')
+    o.className = 'cap-busy'
+    o.innerHTML = `<span class="spin"></span><span>Reading your piece…</span>`
+    cap.appendChild(o)
+  } else if (!on && o) {
+    o.remove()
+  }
+}
+
+// Assign a segmented-control value by simulating the "on" chip.
+function setSeg(id, val) {
+  document
+    .querySelectorAll(`#${id} .chip`)
+    .forEach((b) => b.classList.toggle('on', String(b.dataset.v) === String(val)))
+}
+
+// Apply AI tags to the empty form fields.
+function applyTags(t) {
+  if (!t) return
+  if (t.name && !$('#f-name').value.trim()) $('#f-name').value = t.name
+  if (t.category) $('#f-cat').value = t.category
+  if (Array.isArray(t.colors) && t.colors.length) $('#f-colors').value = t.colors.join(', ')
+  if (t.fabric && !$('#f-fabric').value.trim()) $('#f-fabric').value = t.fabric
+  if (t.season) $('#f-season').value = t.season
+  if (t.formality) setSeg('f-formality', t.formality)
+  if (t.warmth) setSeg('f-warmth', t.warmth)
+}
+
+// AI-first tagging with a graceful fallback to local color detection.
+async function aiAutoTag(cx, cv) {
+  const base64 = (pendingPhoto?.dataUrl || '').split(',')[1]
+  if (!base64) return
+  setCapBusy(true)
+  try {
+    const tags = await tagGarment(base64, 'image/jpeg')
+    applyTags(tags)
+    toast('Tagged for you ✨')
+  } catch (e) {
+    // Vision service unavailable (not configured, offline, etc.) — fall back.
+    autoTag(cx, cv)
+  } finally {
+    setCapBusy(false)
+  }
 }
 function autoTag(cx, cv) {
   const d = cx.getImageData(0, 0, cv.width, cv.height).data,

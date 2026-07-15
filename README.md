@@ -102,6 +102,31 @@ The anon key ships in the client bundle — that is expected and safe **because
 RLS is enabled**: a user can only read/write rows where `user_id = auth.uid()`.
 Never put the `service_role` key in the client.
 
+## AI photo tagging (Supabase Edge Function)
+
+Adding an item can auto-detect its **category, colors, fabric, season, formality
+and warmth** from the photo using a Claude vision model. The Anthropic API key
+lives server-side in a Supabase Edge Function ([`supabase/functions/tag-garment`](supabase/functions/tag-garment/index.ts)) —
+never in the client. The function is JWT-protected and rejects anonymous callers.
+
+Setup (one-time):
+
+```bash
+npm install -g supabase        # if you don't have the CLI
+supabase login
+supabase link --project-ref tifnqeujvdhhwpvhvycn
+
+# Store your Anthropic key as a secret (get one at console.anthropic.com):
+supabase secrets set ANTHROPIC_API_KEY=sk-ant-...
+
+# Deploy the function:
+supabase functions deploy tag-garment
+```
+
+Model: `claude-haiku-4-5` with structured (JSON-schema) output — ~$0.002 per
+photo. If the function isn't deployed, tagging **degrades gracefully** to the
+built-in local color detection, so the app keeps working without it.
+
 ## Deploy to Firebase Hosting
 
 ```bash
@@ -152,7 +177,7 @@ redirects (Google OAuth, magic links, password reset) work in production.
 
 ## Roadmap
 
+- ✅ Wear-tracking to rotate suggestions and surface neglected pieces.
+- ✅ AI vision tagging for category/colors/fabric from photos (Claude Haiku).
 - Web Push / FCM notifications (the TWA shell already delegates them).
-- Real AI vision tagging for fabric/category from photos.
-- Wear-tracking to rotate suggestions and surface neglected pieces.
 - Google Calendar connector for events.

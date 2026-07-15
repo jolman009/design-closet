@@ -59,6 +59,19 @@ export async function uploadPhoto(id, blob) {
   )}`
 }
 
+/** Calls the tag-garment Edge Function to AI-tag a clothing photo.
+ *  `base64` is the raw JPEG data (no data: prefix). Returns the tags object. */
+export async function tagGarment(base64, mediaType = 'image/jpeg') {
+  const r = await fetch(`${SB_URL}/functions/v1/tag-garment`, {
+    method: 'POST',
+    headers: { ...authHeaders(), 'Content-Type': 'application/json' },
+    body: JSON.stringify({ image: base64, media_type: mediaType }),
+  })
+  if (!r.ok) throw new Error((await r.text()) || 'tagging failed')
+  const { tags } = await r.json()
+  return tags
+}
+
 /* ---------------- Auth helpers ---------------- */
 // Reads the project's enabled auth providers so the sign-in screen can adapt
 // (e.g. only show "Continue with Google" when Google is actually configured).

@@ -245,3 +245,9 @@ nav.bottom .pill{padding:3px 16px}
 .wear-stat > div{ flex:1; background:var(--surface-2); border-radius:10px; padding:14px 12px; text-align:center }
 .wear-stat .ws-n{ font-family:'Playfair Display',serif; font-size:20px; line-height:1.1 }
 .wear-stat .ws-l{ font:600 9.5px 'Inter'; letter-spacing:.12em; text-transform:uppercase; color:var(--text-2); margin-top:5px }
+
+/* ---------- AI tagging busy overlay ---------- */
+.cap-busy{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  background:color-mix(in srgb, var(--bg) 78%, transparent); backdrop-filter:blur(2px);
+  color:var(--text); font:600 12px 'Inter'; letter-spacing:.06em; z-index:2 }
+.cap-busy .spin{ width:22px; height:22px; border-width:2.5px }
