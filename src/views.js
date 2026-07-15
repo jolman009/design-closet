@@ -339,6 +339,11 @@ export function vProfile() {
     }
   </section>
   <button class="btn btn-ghost btn-block" style="margin-top:26px" onclick="signOutUser()"><span class="ms" style="font-size:17px;margin-right:6px">logout</span>Sign Out</button>
+  <div class="auth-legal" style="margin-top:18px">
+    <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+    <span>·</span>
+    <a href="/terms" target="_blank" rel="noopener">Terms</a>
+  </div>
   <p class="footnote">A place for everything, and everything in its place.</p>`
 }
 

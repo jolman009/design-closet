@@ -88,6 +88,11 @@ export function renderAuth() {
           : `New here? <button onclick="authToggle()">Create an account</button>`
       }
     </div>
+    <div class="auth-legal">
+      <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+      <span>·</span>
+      <a href="/terms" target="_blank" rel="noopener">Terms</a>
+    </div>
   </div>`
 
   // Submit on Enter from the password field. NOTE: must not return a falsy value
