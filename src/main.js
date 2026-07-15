@@ -10,6 +10,12 @@ import { render, go } from './render.js'
 import { renderNav } from './views.js'
 import { generateOutfit } from './engine.js'
 import { markOutfitWorn, logItemWear } from './wear.js'
+import {
+  connectGoogleCalendar,
+  disconnectGoogle,
+  planForGoogleEvent,
+  restoreGoogleCalendar,
+} from './gcal.js'
 import { renderAuth, authSubmit, authToggle, authGoogle, authReset, authResendFor } from './auth.js'
 import * as modals from './modals.js'
 
@@ -99,6 +105,7 @@ async function bootApp() {
     S.loaded = true
     render()
     handleLaunchParams()
+    restoreGoogleCalendar() // reconnect Google Calendar if previously linked
   } catch (e) {
     console.error(e)
     S.loaded = true
@@ -224,6 +231,9 @@ Object.assign(window, {
   generateOutfit,
   markOutfitWorn,
   logItemWear,
+  connectGoogleCalendar,
+  disconnectGoogle,
+  planForGoogleEvent,
   signOutUser,
   dismissInstall,
   doInstall,

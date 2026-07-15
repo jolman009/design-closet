@@ -127,6 +127,35 @@ Model: `claude-haiku-4-5` with structured (JSON-schema) output — ~$0.002 per
 photo. If the function isn't deployed, tagging **degrades gracefully** to the
 built-in local color detection, so the app keeps working without it.
 
+## Google Calendar connector (optional)
+
+The Events tab can pull real upcoming events from Google Calendar (read-only) and
+plan outfits for them. It uses Google Identity Services client-side — **separate
+from the app's email login**, so connecting a calendar doesn't change how you
+sign in. Calendar data is fetched live and never stored in the database.
+
+Setup:
+
+1. In [Google Cloud Console](https://console.cloud.google.com/) create (or pick)
+   a project.
+2. **APIs & Services → Library** → enable **Google Calendar API**.
+3. **APIs & Services → OAuth consent screen** → External. Add the scope
+   `.../auth/calendar.readonly`. While in "Testing" mode, add your Google
+   account under **Test users** (no Google verification needed for personal use).
+4. **APIs & Services → Credentials → Create credentials → OAuth client ID → Web
+   application**. Under **Authorized JavaScript origins** add:
+   - `https://design-closet.web.app`
+   - `http://localhost:5173` (for dev)
+5. Copy the **Client ID** into `.env`:
+   ```
+   VITE_GOOGLE_CLIENT_ID=xxxxx.apps.googleusercontent.com
+   ```
+6. Rebuild + redeploy (`npm run deploy`). A **Connect Google Calendar** button
+   appears on the Events tab.
+
+The Client ID is a public value (safe to ship in the client). If it's blank, the
+connector is simply hidden — the manual event list still works.
+
 ## Deploy to Firebase Hosting
 
 ```bash
@@ -179,5 +208,5 @@ redirects (Google OAuth, magic links, password reset) work in production.
 
 - ✅ Wear-tracking to rotate suggestions and surface neglected pieces.
 - ✅ AI vision tagging for category/colors/fabric from photos (Claude Haiku).
+- ✅ Google Calendar connector for events (read-only, client-side OAuth).
 - Web Push / FCM notifications (the TWA shell already delegates them).
-- Google Calendar connector for events.

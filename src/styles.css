@@ -251,3 +251,15 @@ nav.bottom .pill{padding:3px 16px}
   background:color-mix(in srgb, var(--bg) 78%, transparent); backdrop-filter:blur(2px);
   color:var(--text); font:600 12px 'Inter'; letter-spacing:.06em; z-index:2 }
 .cap-busy .spin{ width:22px; height:22px; border-width:2.5px }
+
+/* ---------- Google Calendar connector ---------- */
+.gcal-bar{ display:flex; align-items:center; gap:10px; width:100%; margin-top:16px; padding:13px 15px;
+  background:var(--surface); border:1px solid var(--border); border-radius:12px; box-shadow:var(--shadow);
+  font:500 13.5px 'Inter'; color:var(--text); text-align:left }
+[data-theme="feminine"] .gcal-bar{ border:none }
+button.gcal-bar{ cursor:pointer }
+.gcal-bar.connect .ms{ color:var(--primary) }
+[data-theme="masculine"] .gcal-bar.connect .ms{ color:var(--gold) }
+.gcal-bar .link{ padding:2px 4px }
+.gcal-tag{ display:inline-block; margin-left:8px; background:var(--chip); color:var(--text-2);
+  font:600 9px 'Inter'; letter-spacing:.1em; text-transform:uppercase; padding:2px 7px; border-radius:4px; vertical-align:middle }

@@ -12,6 +12,7 @@ export const S = {
   weather: { temp: 22, desc: 'Sunny & Dry', icon: 'sunny' },
   loaded: false,
   online: navigator.onLine,
+  google: { connected: false, events: [], loading: false }, // Google Calendar connector
   _homeFit: null,
 }
 

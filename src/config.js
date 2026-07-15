@@ -11,3 +11,7 @@ export const BUCKET = import.meta.env.VITE_SUPABASE_BUCKET || 'closet-photos'
 
 export const DEFAULT_LAT = Number(import.meta.env.VITE_DEFAULT_LAT || 32.78)
 export const DEFAULT_LON = Number(import.meta.env.VITE_DEFAULT_LON || -96.8)
+
+// Google OAuth client ID for the optional Calendar connector (public, safe to
+// ship in the client). Empty string disables the feature gracefully.
+export const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || ''

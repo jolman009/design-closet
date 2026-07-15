@@ -6,6 +6,7 @@ import { COLOR_HEX } from './state.js'
 import { esc, greeting, fmtEvent, thumbHTML } from './ui.js'
 import { generateOutfit, itemsOf } from './engine.js'
 import { neglectedItems, wornLabel } from './wear.js'
+import { mergedUpcoming, gcalConfigured } from './gcal.js'
 
 export function renderNav() {
   const nav = document.querySelector('#nav')
@@ -21,9 +22,7 @@ export function vHome() {
   if (!S.loaded)
     return `<div class="skel" style="height:34px;width:60%;margin-top:14px"></div><div class="skel" style="height:330px;margin-top:22px"></div><div class="skel" style="height:80px;margin-top:22px"></div>`
   const name = S.profile?.name || 'You'
-  const upcoming = S.events
-    .filter((e) => new Date(e.event_at) > new Date(Date.now() - 3600e3))
-    .slice(0, 3)
+  const upcoming = mergedUpcoming(3600e3).slice(0, 3)
   const suggestion =
     S._homeFit || (S._homeFit = generateOutfit(upcoming[0]?.event_type || 'casual'))
   const recent = S.items.slice(0, 3)
@@ -114,17 +113,19 @@ function rediscover() {
 
 export function eventCard(e) {
   const planned = e.planned_outfit && S.outfits.find((o) => o.id === e.planned_outfit)
+  const isG = e.source === 'google'
+  const planFn = isG ? 'planForGoogleEvent' : 'planForEvent'
   return `
   <div class="card event">
     <div class="eicon"><span class="ms">${EVENT_ICON[e.event_type] || 'event'}</span></div>
     <div style="flex:1;min-width:0">
-      <div class="et">${esc(e.title)}</div>
-      <div class="ed">${fmtEvent(e.event_at)}</div>
+      <div class="et">${esc(e.title)}${isG ? '<span class="gcal-tag">Calendar</span>' : ''}</div>
+      <div class="ed">${fmtEvent(e.event_at)}${e.location ? ' · ' + esc(e.location) : ''}</div>
     </div>
     ${
       planned
         ? `<button class="btn btn-ghost" onclick="openOutfitDetail('${planned.id}')">View Look</button>`
-        : `<button class="btn btn-p" onclick="planForEvent('${e.id}')">Plan Outfit</button>`
+        : `<button class="btn btn-p" onclick="${planFn}('${e.id}')">Plan Outfit</button>`
     }
   </div>`
 }
@@ -237,13 +238,14 @@ export function outfitCard(o, isDraft) {
 export function vEvents() {
   if (!S.loaded)
     return `<div class="skel" style="height:34px;width:50%;margin-top:14px"></div><div class="skel" style="height:80px;margin-top:22px"></div>`
-  const up = S.events.filter((e) => new Date(e.event_at) > new Date(Date.now() - 86400e3))
+  const up = mergedUpcoming(86400e3)
   return `
   <div class="row" style="align-items:flex-end">
     <div><div class="kicker">Your Schedule</div><h1 class="title">Events</h1></div>
     <button class="btn btn-p" onclick="openEventForm()"><span class="ms" style="font-size:16px;margin-right:4px">add</span>New</button>
   </div>
   <p class="sub">Every engagement, dressed with intention.</p>
+  ${gcalControl()}
   <section style="margin-top:18px">
     ${
       up.length
@@ -251,6 +253,27 @@ export function vEvents() {
         : `<div class="empty"><span class="ms">calendar_month</span>No upcoming events. Add one and I'll plan the outfit.</div>`
     }
   </section>`
+}
+
+// Google Calendar connect / status control. Hidden when not configured.
+function gcalControl() {
+  if (!gcalConfigured()) return ''
+  const g = S.google
+  if (g.loading && !g.connected)
+    return `<div class="gcal-bar"><span class="spin"></span> Connecting to Google Calendar…</div>`
+  if (g.connected)
+    return `
+    <div class="gcal-bar connected">
+      <span class="ms" style="color:var(--primary)">event_available</span>
+      <span style="flex:1">Google Calendar connected${g.events.length ? ` · ${g.events.length} upcoming` : ''}</span>
+      <button class="link" onclick="disconnectGoogle()">Disconnect</button>
+    </div>`
+  return `
+    <button class="gcal-bar connect" onclick="connectGoogleCalendar()">
+      <span class="ms">calendar_add_on</span>
+      <span style="flex:1;text-align:left">Connect Google Calendar</span>
+      <span class="ms">chevron_right</span>
+    </button>`
 }
 
 export function vProfile() {
