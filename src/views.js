@@ -5,6 +5,7 @@ import { S, CAT_ICON, CAT_LABEL, EVENT_ICON, OCCASIONS, TABS } from './state.js'
 import { COLOR_HEX } from './state.js'
 import { esc, greeting, fmtEvent, thumbHTML } from './ui.js'
 import { generateOutfit, itemsOf } from './engine.js'
+import { neglectedItems, wornLabel } from './wear.js'
 
 export function renderNav() {
   const nav = document.querySelector('#nav')
@@ -79,6 +80,33 @@ export function vHome() {
       <button class="slot" style="min-height:110px" onclick="openItemForm()"><div class="plus"><span class="ms">add</span></div></button>
       ${recent
         .map((i) => `<div class="item-card" onclick="openItemDetail('${i.id}')">${thumbHTML(i)}</div>`)
+        .join('')}
+    </div>
+  </section>
+  ${rediscover()}`
+}
+
+// Nudge neglected pieces back into rotation.
+function rediscover() {
+  if (S.items.length < 4) return ''
+  const pieces = neglectedItems(3)
+  if (!pieces.length) return ''
+  return `
+  <section>
+    <div class="row"><h2 class="sec">Rediscover</h2></div>
+    <p class="sub" style="margin-top:2px">Pieces you haven't reached for in a while.</p>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px">
+      ${pieces
+        .map(
+          (i) => `
+        <div class="item-card" onclick="openItemDetail('${i.id}')">
+          ${thumbHTML(i)}
+          <div class="item-meta" style="padding:8px 10px 10px">
+            <div class="nm" style="font-size:12.5px">${esc(i.name)}</div>
+            <div class="br" style="font-size:9.5px">${esc(wornLabel(i))}</div>
+          </div>
+        </div>`,
+        )
         .join('')}
     </div>
   </section>`

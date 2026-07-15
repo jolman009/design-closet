@@ -5,6 +5,7 @@ import { $, esc, toast, thumbHTML, theme } from './ui.js'
 import { db, uploadPhoto } from './supabase.js'
 import { generateOutfit, itemsOf } from './engine.js'
 import { render } from './render.js'
+import { wornLabel } from './wear.js'
 
 /* ---------------- Sheet plumbing ---------------- */
 export function closeModal() {
@@ -324,8 +325,13 @@ export function openItemDetail(id) {
       ${i.fabric ? `<span class="chip">${esc(i.fabric)}</span>` : ''}
       ${(i.colors || []).map((c) => `<span class="chip">${esc(c)}</span>`).join('')}
     </div>
-    <div style="display:flex;gap:10px;margin-top:24px">
-      <button class="btn btn-p" style="flex:1" onclick='closeModal();openItemForm(${JSON.stringify(i).replace(
+    <div class="wear-stat">
+      <div><div class="ws-n">${i.worn_count || 0}</div><div class="ws-l">Times worn</div></div>
+      <div><div class="ws-n">${wornLabel(i).replace(/^Worn /, '').replace('Never worn', '—')}</div><div class="ws-l">Last worn</div></div>
+    </div>
+    <button class="btn btn-p btn-block" style="margin-top:16px" onclick="logItemWear('${i.id}');closeModal()"><span class="ms" style="font-size:17px;margin-right:6px">check_circle</span>I wore this</button>
+    <div style="display:flex;gap:10px;margin-top:10px">
+      <button class="btn btn-ghost" style="flex:1" onclick='closeModal();openItemForm(${JSON.stringify(i).replace(
         /'/g,
         '&#39;',
       )})'>Edit</button>
@@ -360,9 +366,12 @@ export function openOutfitDetail(id, isHome) {
       </div>`,
       )
       .join('')}
+    <button class="btn btn-p btn-block" style="margin-top:22px" onclick="markOutfitWorn('${
+      isHome ? '' : o.id
+    }', ${!!isHome});closeModal()"><span class="ms" style="font-size:17px;margin-right:6px">check_circle</span>I wore this today</button>
     ${
       isHome
-        ? `<button class="btn btn-p btn-block" style="margin-top:22px" onclick="S.genOutfit=S._homeFit;saveGenerated();closeModal()">Save This Look</button>
+        ? `<button class="btn btn-ghost btn-block" style="margin-top:10px" onclick="S.genOutfit=S._homeFit;saveGenerated();closeModal()">Save This Look</button>
               <button class="btn btn-ghost btn-block" style="margin-top:10px" onclick="S._homeFit=generateOutfit('casual');closeModal();render()">Try Another</button>`
         : ''
     }

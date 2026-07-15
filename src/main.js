@@ -9,6 +9,7 @@ import { DEFAULT_LAT, DEFAULT_LON } from './config.js'
 import { render, go } from './render.js'
 import { renderNav } from './views.js'
 import { generateOutfit } from './engine.js'
+import { markOutfitWorn, logItemWear } from './wear.js'
 import { renderAuth, authSubmit, authToggle, authGoogle, authReset, authResendFor } from './auth.js'
 import * as modals from './modals.js'
 
@@ -221,6 +222,8 @@ Object.assign(window, {
   go,
   setTheme,
   generateOutfit,
+  markOutfitWorn,
+  logItemWear,
   signOutUser,
   dismissInstall,
   doInstall,

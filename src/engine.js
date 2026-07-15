@@ -22,6 +22,15 @@ function pickBest(pool, target, used) {
     if (it.season === seasonNow()) s += 0.8
     else if (it.season !== 'all') s -= 0.8
     if ((S.profile?.palette || []).some((p) => (it.colors || []).includes(p))) s += 0.9
+    // Rotation: avoid just-worn pieces, gently resurface neglected ones.
+    if (it.last_worn) {
+      const days = (Date.now() - new Date(it.last_worn).getTime()) / 86400000
+      if (days < 2) s -= 1.8
+      else if (days < 5) s -= 0.8
+      else if (days > 21) s += 0.7
+    } else {
+      s += 0.5 // never worn — give it a turn
+    }
     s += Math.random() * 1.6 // gentle variety between generations
     if (s > bestScore) {
       bestScore = s
